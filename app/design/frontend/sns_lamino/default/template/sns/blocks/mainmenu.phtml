@@ -1,0 +1,121 @@
+<?php
+$themehelper = Mage::helper('lamino/data');
+
+$_menu = $this->getMenuHtml(false);
+$_momenu = $this->getMenuHtml(true);
+
+?>
+<div id="sns_custommenu" class="visible-md visible-lg">
+	<ul class="mainnav">
+		<?php echo $_menu; ?>
+	</ul>
+</div>
+<?php if($themehelper->getField('menu_resMenu') == 'collapse') : ?>
+<div id="sns_mommenu" class="menu-collapse hidden-md hidden-lg">
+	<span class="btn2 btn-navbar leftsidebar">
+		<i class="fa fa-align-left"></i>
+	    <span class="overlay"></span>
+	</span>
+	<span class="btn2 btn-navbar menusidebar collapsed" data-toggle="collapse" data-target="#menu_collapse">
+		<i class="fa fa-align-justify"></i>
+	    <span class="overlay"></span>
+	</span>
+	<span class="btn2 btn-navbar rightsidebar">
+		<i class="fa fa-align-left"></i>
+	    <span class="overlay"></span>
+	</span>
+	<div class="collapse_wrap">
+		<div id="menu_collapse" class="collapse">
+			<ul class="mainnav">
+				<?php echo $_momenu; ?>
+			</ul>
+		</div>
+	</div>
+</div>
+<?php else : ?>
+<div id="sns_mommenu" class="menu-offcanvas hidden-md hidden-lg">
+	<span class="btn2 btn-navbar leftsidebar">
+		<i class="fa fa-align-left"></i>
+	    <span class="overlay"></span>
+	</span>
+	<span class="btn2 btn-navbar offcanvas">
+		<i class="fa fa-align-justify"></i>
+	    <span class="overlay"></span>
+	</span>
+	<span class="btn2 btn-navbar rightsidebar">
+		<i class="fa fa-align-right"></i>
+	    <span class="overlay"></span>
+	</span>
+	<div id="menu_offcanvas" class="offcanvas">
+		<ul class="mainnav">
+			<?php echo $_momenu; ?>
+		</ul>
+	</div>
+</div>
+<?php endif; ?>
+
+<script>
+	jQuery(document).ready(function($){
+		<?php if($themehelper->getField('menu_resMenu') == 'collapse') : ?>
+			$('#menu_collapse').SnsAccordion({
+				btn_open: '<i class="fa fa-plus"></i>',
+				btn_close: '<i class="fa fa-minus"></i>'
+			});
+			$('#sns_mommenu .btn2.menusidebar').on('click', function(){
+				if($(this).hasClass('active')){
+					$(this).find('.overlay').fadeOut(250);
+					$(this).removeClass('active');
+					$('body').removeClass('show-sidebar');
+				} else {
+					$(this).addClass('active');
+					$(this).find('.overlay').fadeIn(250);
+					$('body').addClass('show-sidebar');
+				}
+			});
+		<?php else : ?>
+			$('#menu_offcanvas').SnsAccordion({
+				accordion: false,
+				expand: false,
+				btn_open: '<i class="fa fa-plus"></i>',
+				btn_close: '<i class="fa fa-minus"></i>'
+			});
+			$('#sns_mommenu .btn2.offcanvas').on('click', function(){
+				if($('#menu_offcanvas').hasClass('active')){
+					$(this).find('.overlay').fadeOut(250);
+					$('#menu_offcanvas').removeClass('active');
+					$('body').removeClass('show-sidebar');
+				} else {
+					$('#menu_offcanvas').addClass('active');
+					$(this).find('.overlay').fadeIn(250);
+					$('body').addClass('show-sidebar');
+				}
+			});
+		<?php endif; ?>
+		if($('#sns_right').length) {
+			$('#sns_mommenu .btn2.rightsidebar').css('display', 'inline-block').on('click', function(){
+				if($('#sns_right').hasClass('active')){
+					$(this).find('.overlay').fadeOut(250);
+					$('#sns_right').removeClass('active');
+					$('body').removeClass('show-sidebar');
+				} else {
+					$('#sns_right').addClass('active');
+					$(this).find('.overlay').fadeIn(250);
+					$('body').addClass('show-sidebar');
+				}
+			});
+		}
+		if($('#sns_left').length) {
+			$('#sns_mommenu .btn2.leftsidebar').css('display', 'inline-block').on('click', function(){
+				if($('#sns_left').hasClass('active')){
+					$(this).find('.overlay').fadeOut(250);
+					$('#sns_left').removeClass('active');
+					$('body').removeClass('show-sidebar');
+				} else {
+					$('#sns_left').addClass('active');
+					$(this).find('.overlay').fadeIn();
+					$('body').addClass('show-sidebar');
+				}
+			});
+		}
+	});
+</script>

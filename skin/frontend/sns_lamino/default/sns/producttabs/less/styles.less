@@ -1,0 +1,257 @@
+.animation-play-state (@state) {
+    -webkit-animation-play-state: @state;
+    -moz-animation-play-state: @state;
+    -o-animation-play-state: @state;
+    animation-play-state: @state;
+}
+
+.sns-producttabs {
+    .pre-text {
+        margin: 0 0 15px;
+    }
+    .post-text {
+        margin: 10px 0 0;
+    }
+    a:hover {
+        text-decoration: none;
+    }
+    .sns-pdt-container {
+        padding: 0;
+        .pdt-nav {
+            margin:0;
+            padding:0;
+            list-style:none;
+            & > li {
+                float: left;
+                font-size: 16px;
+                line-height: 100%;
+                margin: 0 10px 10px 0;
+                padding: 8px 15px;
+                cursor: pointer;
+            }
+        }
+    }
+    .sns-pdt-content {
+        .pdt-content {
+            padding:0;
+            width:100%;
+            display:none;
+            .item-animate {
+                .opacity(0);
+                position: relative;
+            }
+            .play {
+                .item-animate {
+                    .opacity(1);
+                    .animation-play-state(running);
+                }
+            }
+            .slideBottom.play .item-animate { .animation(slideBottom 600ms ease both); }
+            .slideLeft.play .item-animate { .animation(slideLeft 600ms ease both); }
+            .slideRight.play .item-animate { .animation(slideRight 600ms ease both); }
+            .bounceIn.play .item-animate { .animation(bounceIn 600ms ease both); }
+            .bounceInRight.play .item-animate { .animation(bounceInRight 600ms ease both); }
+            .zoomIn.play .item-animate { .animation(zoomIn 600ms ease both); }
+            .zoomOut.play .item-animate { .animation(zoomOut 600ms ease both); }
+            .pageRight.play .item-animate { .animation(pageRight 600ms ease both); }
+            .pageLeft.play .item-animate { .animation(pageLeft 600ms ease both); }
+            .pageTop.play .item-animate { .animation(pageTop 600ms ease both); }
+            .pageBottom.play .item-animate { .animation(pageBottom 600ms ease both); }
+            .starwars.play .item-animate { 
+            	.animation(starwars 600ms ease-out both); 
+            	.transform-origin(50% 50%);
+            }
+        }
+        .pdt-list {
+        	.clearfix();
+            margin: 0 -15px;
+            &.products-grid {
+            	.item {
+            		margin: 0 0 30px;
+            		&:hover {
+            			position: relative;
+            			z-index: 9999;
+              		}
+            	}
+            }
+        }
+        .tab-content-actived {
+            display:inline-block;
+        }
+    }
+    .pdt-content {
+        .content-loading {
+            width: 100%;
+            max-width: 100%;
+            padding: 0;
+            position: relative;
+            background: url(../images/loader.gif) no-repeat scroll center center transparent;
+            min-height:400px;
+            display:block;
+            z-index:0;
+        }
+    }
+}
+.sns-producttabs .sns-pdt-container .pdt-nav >li.tab-nav-actived,
+.sns-producttabs .sns-pdt-container .pdt-nav >li:hover {
+    background: #666;
+    color: #FFF;
+}
+
+.sns-producttabs{ 
+	overflow: visible;
+	.sns-pdt-head {
+		.clearfix();
+		margin-bottom: 5px;
+		margin-top:12px;
+		.sns-pdt-nav {
+			.pdt-nav {
+				margin: 0 0 5px;
+				color: #999;
+				font-size: 115%;
+				.item-nav {
+					.inline-block();
+					&.tab-nav-actived {
+						span {
+							background: @color1;
+							color: #fff;
+							&:before {
+								.border-arrow-bottom (12px, 6px, @color1);
+								content: '';
+								display: block;
+								position: absolute;
+								top: 100%;
+								left: 50%;
+								margin-left: -6px;
+							}
+						}
+					}
+					&:hover {
+						span {
+							background: @color1;
+							color: #fff;
+						}
+					}
+					span {
+						cursor: pointer;
+						position: relative;
+						display: block;
+						padding: 10px 20px;
+						border-radius: 4px;
+						color: #333;
+					}
+					
+				}
+			}
+			.tabdrop {
+				display:none;
+				 margin-bottom: 20px;
+				.dropdown-toggle * {
+					display:inline-block !important;
+				}
+				.dropdown-toggle {
+						font-size: 130%;
+						background: @color1;
+						color: #fff;
+						border-radius: 4px;
+						cursor: pointer;
+						display: block;
+						padding: 10px 15px;
+							&:before {
+								.border-arrow-bottom (12px, 6px, @color1);
+								content: '';
+								display: block;
+								position: absolute;
+								top: 100%;
+								left: 50%;
+								margin-left: -6px;
+									}
+							}
+			}
+			.dropdown-menu {top:115% !important;border-radius:0px;li a {cursor: pointer;}}
+		}
+		
+	}
+	
+	.sns-pdt-container{
+		.sns-pdt-content{
+			width: 100%; 
+			.content-loading{
+				min-height:445px;
+			}
+			.is-loading {
+				.pdt-loadmore{ display: none; }
+			}
+			.pdt-loadmore{
+				.clearfix();
+				clear: both;
+				text-align: center;
+				.ico-loading {
+					display: none !important;
+				}
+		 		.btn-loadmore {
+			 		.transition(all 0.2s ease-out);
+					.loadmore {
+						display: block;
+						cursor: pointer;
+						position: relative;
+						line-height: 24px;
+				 		border: none;
+				 		font-size: 120%;
+			 			height: 40px;
+				 		&:hover {
+				 			&:after {
+				 			}
+				 			&:before {
+				 			}
+				 		}
+						&:after {
+							.transition(all 0.2s ease-out);
+							content: "\f103";
+							font-family: FontAwesome;
+							line-height: 1;
+							-webkit-font-smoothing: antialiased;
+							-moz-osx-font-smoothing: grayscale;
+						}
+						&:before {
+							.transition(all 0.2s ease-out);
+							content: attr(data-label);
+							margin-right: 5px;
+						}
+					}
+			 		&.loading{
+						.loadmore {
+							&:after { display: none; }
+							&:before {
+								content: attr(data-label-load);
+							}
+						}
+			 		}
+			 		&.loaded{
+			 			cursor: text;
+			 			.loadmore {
+			 				background: @color2;
+			 				&:after {
+			 					content: "\f00c";
+			 				}
+			 			}
+			 			.inner > span{
+			 				padding-right: 0px; 
+			 				background: none; 
+			 			}
+			 		}
+		 		}
+			}
+		}
+	}
+}
+
+
+// tab slide 
+.sns-producttabs-slider {
+	.owl-item {
+		padding: 0 15px;
+	}
+}
+
+

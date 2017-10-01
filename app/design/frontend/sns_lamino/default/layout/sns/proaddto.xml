@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<layout version="1.0">
+    <default>
+        <reference name="head">
+        	<action method="addItem"><type>js_css</type><name>sns/fancybox2/jquery.fancybox.css</name></action>
+        	<action method="addCss"><stylesheet>sns/proaddto/css/style.css</stylesheet></action>
+            <action method="addJs"><script>sns/jquery/jquery.js</script></action>
+            <action method="addJs"><script>sns/jquery/jquery-noconflict.js</script></action>
+            <action method="addJs"><script>sns/fancybox2/jquery.fancybox.pack.js</script></action>
+            <action method="addJs" ifconfig="sns_proaddto_cfg/general/isenabled"><script>sns/proaddto/script.js</script></action>
+        </reference>
+        <reference name="before_body_end">
+            <block type="core/template" name="proaddto_overlay" template="sns/proaddto/overlay.phtml"/>
+        </reference>
+    </default>
+</layout>

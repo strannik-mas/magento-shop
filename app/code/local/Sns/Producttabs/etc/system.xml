@@ -1,0 +1,209 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <sns>
+            <label>SNSTheme.Com</label>
+            <sort_order>205</sort_order>
+        </sns>
+    </tabs>
+    <sections>
+    	<sns_producttabs_cfg translate="label" module="producttabs">
+    		<label>SNS Product Tabs</label>
+            <tab>sns</tab>
+			<frontend_type>text</frontend_type>
+            <sort_order>150</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+            	<infomations translate="label">
+            		<label>SNS Producttabs</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>0</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+            		<frontend_model>producttabs/adminhtml_system_config_form_fieldset_infomations</frontend_model>
+	            </infomations>
+            	<general translate="label">
+            		<label>Default Configuration</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                    	<isenabled translate="label" module="core">
+							<label>Enabled</label>
+							<sort_order>10</sort_order>
+							<frontend_type>select</frontend_type>
+                        	<source_model>adminhtml/system_config_source_yesno</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</isenabled>
+	                	<title translate="label">
+	                		<label>Title</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+						</title>
+                        <effects translate="label">
+                            <label>Effects</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>producttabs/system_config_source_listEffects</source_model>
+                            <comment>Select effects for product list</comment>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </effects>
+
+
+						<sourceoptions translate="label">
+                            <label>Source</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>390</sort_order>
+                            <show_in_default>1</show_in_default>
+                        </sourceoptions>
+						<list_products_by translate="label">
+		            		<label>List Products By</label>
+		            		<frontend_type>select</frontend_type>
+		            		<source_model>producttabs/system_config_source_listBy</source_model>
+		            		<sort_order>400</sort_order>
+		            		<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</list_products_by>
+						<order_type translate="label">
+		            		<label>Select Order By</label>
+		            		<frontend_type>multiselect</frontend_type>
+		            		<source_model>producttabs/system_config_source_orderBy</source_model>
+		            		<sort_order>410</sort_order>
+		            		<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends><list_products_by>order</list_products_by></depends>
+						</order_type>
+						<product_category translate="label">
+		            		<label>Select Category</label>
+		            		<frontend_type>multiselect</frontend_type>
+		            		<source_model>producttabs/system_config_source_listCategory</source_model>
+		            		<comment>This is not effect on category views and product views.</comment>
+		            		<sort_order>420</sort_order>
+		            		<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</product_category>
+						
+		            	<product_order_by translate="label">
+		            		<label>Product Order By</label>
+		            		<frontend_type>select</frontend_type>
+		            		<source_model>producttabs/system_config_source_productOrderBy</source_model>
+		            		<sort_order>430</sort_order>
+		            		<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends><list_products_by>category</list_products_by></depends>
+						</product_order_by>
+		            	<product_order_dir translate="label">
+		            		<label>Product Order Dir</label>
+		            		<frontend_type>select</frontend_type>
+		            		<source_model>producttabs/system_config_source_orderDirection</source_model>
+		            		<sort_order>440</sort_order>
+		            		<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</product_order_dir>
+						<number_per_display translate="label">
+		            		<label>Number per tab</label>
+		            		<frontend_type>text</frontend_type>
+		            		<sort_order>450</sort_order>
+		            		<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+                            <comment>Number of products displayed first click to tab</comment>
+						</number_per_display>
+						
+						
+						<product_other_infomations_heading translate="label">
+                            <label>Number products per row</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>850</sort_order>
+                            <show_in_default>1</show_in_default>
+                        </product_other_infomations_heading>
+                        <screen_xs translate="label">
+                            <label><![CDATA[Screen width > 480px]]></label>
+		            		<frontend_type>select</frontend_type>
+		            		<source_model>producttabs/system_config_source_itemPerRow</source_model>
+                            <sort_order>860</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <validate>validate-number validate-greater-than-zero</validate>
+                        </screen_xs>
+                        <screen_sm translate="label">
+                            <label><![CDATA[Screen width > 768px]]></label>
+		            		<frontend_type>select</frontend_type>
+		            		<source_model>producttabs/system_config_source_itemPerRow</source_model>
+                            <sort_order>870</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <validate>validate-number validate-greater-than-zero</validate>
+                        </screen_sm>
+                        <screen_md translate="label">
+                            <label><![CDATA[Screen width > 992px]]></label>
+		            		<frontend_type>select</frontend_type>
+		            		<source_model>producttabs/system_config_source_itemPerRow</source_model>
+                            <sort_order>880</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <validate>validate-number validate-greater-than-zero</validate>
+                        </screen_md>
+                        <screen_lg translate="label">
+                            <label><![CDATA[Screen width > 1200px]]></label>
+		            		<frontend_type>select</frontend_type>
+		            		<source_model>producttabs/system_config_source_itemPerRow</source_model>
+                            <sort_order>890</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <validate>validate-number validate-greater-than-zero</validate>
+                        </screen_lg>
+                        
+						<gridlayoutcfg translate="label">
+							<label>Grid Layout</label>
+							<frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+							<sort_order>1000</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</gridlayoutcfg>
+                        <show_number_loadmore translate="label">
+                            <label>Show number on button Load More</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1010</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </show_number_loadmore>
+                        <number_per_loadmore translate="label">
+                            <label>Number per load more</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>1120</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Number of products displayed each click to loadmore</comment>
+                        </number_per_loadmore>
+                    </fields>
+	            </general>
+            </groups>
+    	</sns_producttabs_cfg>
+    </sections>
+</config>

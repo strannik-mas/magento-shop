@@ -1,0 +1,261 @@
+<?xml version="1.0" ?><config>
+	<frontend>
+		<routers>
+			<lamino>
+				<use>standard</use>
+				<args>
+					<module>Sns_Lamino</module>
+					<frontName>lamino</frontName>
+				</args>
+			</lamino>
+		</routers>
+		<layout>
+			<updates>
+				<lamino>
+					<file>sns/lamino.xml</file>
+				</lamino>
+			</updates>
+		</layout>
+		 <events>
+			<controller_action_layout_render_before>
+				 <observers>
+                    <settings>
+                        <type>singleton</type>
+                        <class>lamino/observer</class>
+                        <method>less_compile</method>
+                    </settings>
+                </observers>
+			</controller_action_layout_render_before>
+		</events>
+	</frontend>
+	<global>
+		<helpers>
+			<lamino>
+				<class>Sns_Lamino_Helper</class>
+			</lamino>
+             <configurableswatches>
+				<rewrite>
+					<mediafallback>Sns_Lamino_Helper_Mediafallback</mediafallback>
+				</rewrite>
+            </configurableswatches>
+			<cms>
+				<rewrite>
+					<wysiwyg_images>Sns_Lamino_Helper_Cms_Wysiwyg_Images</wysiwyg_images>
+				</rewrite>
+			</cms>
+		</helpers>
+		<models>
+			<lamino>
+				<class>Sns_Lamino_Model</class>
+			</lamino>
+		</models>
+		<blocks>
+			<lamino>
+				<class>Sns_Lamino_Block</class>
+			</lamino>
+			<adminhtml>
+				<rewrite>
+					<cms_wysiwyg_images_content>Sns_Lamino_Block_Adminhtml_Cms_Wysiwyg_Images_Content</cms_wysiwyg_images_content>
+				</rewrite>
+			</adminhtml>
+		</blocks>
+		<resources>
+			<sns_lamino_setup>
+				<setup>
+					<module>Sns_Lamino</module>
+					<class>Sns_Lamino_Model_Resource_Eav_Mysql4_Setup</class>
+				</setup>
+				<connection>
+					<use>core_setup</use>
+				</connection>
+			</sns_lamino_setup>
+			<lamino_write>
+				<connection>
+					<use>core_write</use>
+				</connection>
+			</lamino_write>
+			<lamino_read>
+				<connection>
+					<use>core_read</use>
+				</connection>
+			</lamino_read>
+		</resources>
+	</global>
+	<admin>
+		<routers>
+			<adminhtml>
+				<args>
+					<modules>
+						<Sns_Lamino before="Mage_Adminhtml">Sns_Lamino_Adminhtml</Sns_Lamino>
+					</modules>
+				</args>
+			</adminhtml>
+		</routers>
+	</admin>
+	<adminhtml>
+		<menu>
+			<snstheme>
+				<title>SNS Theme</title>
+				<sort_order>87</sort_order>
+				<children>
+					<lamino>
+						<title>SNS Lamino</title>
+						<action>adminhtml/system_config/edit/section/sns_lamino_cfg/</action>
+					</lamino>
+					<lamino_sticky>
+						<title>SNS Lamino Sticky</title>
+						<action>adminhtml/system_config/edit/section/sns_lamino_sticky/</action>
+					</lamino_sticky>
+				</children>
+			</snstheme>
+		</menu>
+		<acl>
+			<resources>
+				<admin>
+					<children>
+						<system>
+							<children>
+								<config>
+									<children>
+										<sns_lamino_cfg translate="title" module="lamino">
+											<title>SNS Lamino Section</title>
+										</sns_lamino_cfg>
+										<sns_lamino_sticky translate="title" module="lamino">
+											<title>SNS Lamino Sticky Section</title>
+										</sns_lamino_sticky>
+									</children>
+								</config>
+							</children>
+						</system>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+		<layout>
+			<updates>
+				<lamino>
+					<file>sns/lamino.xml</file>
+				</lamino>
+			</updates>
+		</layout>
+		<translate>
+			<modules>
+				<Sns_Lamino>
+					<files>
+						<default>Sns_Lamino.csv</default>
+					</files>
+				</Sns_Lamino>
+			</modules>
+		</translate>
+	</adminhtml>
+	<default>
+		<sns_lamino_sticky>
+			<sticky>
+			     <listStickyLeft><![CDATA[a:2:{s:18:"_1407742133129_129";a:6:{s:4:"icon";s:30:"<i class="fa fa-facebook"></i>";s:5:"class";s:0:"";s:4:"link";s:1:"#";s:6:"target";s:6:"_blank";s:5:"style";s:1:"2";s:7:"content";s:8:"Facebook";}s:18:"_1407742138445_445";a:6:{s:4:"icon";s:30:"<i class="fa fa-facebook"></i>";s:5:"class";s:0:"";s:4:"link";s:1:"#";s:6:"target";s:6:"_blank";s:5:"style";s:1:"2";s:7:"content";s:8:"Facebook";}}]]></listStickyLeft>
+			     <listStickyRight><![CDATA[a:2:{s:18:"_1407742130470_470";a:6:{s:4:"icon";s:30:"<i class="fa fa-facebook"></i>";s:5:"class";s:0:"";s:4:"link";s:1:"#";s:6:"target";s:5:"_self";s:5:"style";s:1:"1";s:7:"content";s:16:"lamino_fb_likebox";}s:18:"_1407742137564_564";a:6:{s:4:"icon";s:28:"<i class="fa fa-coffee"></i>";s:5:"class";s:0:"";s:4:"link";s:1:"#";s:6:"target";s:5:"_self";s:5:"style";s:1:"1";s:7:"content";s:19:"lamino_sticky_custom";}}]]></listStickyRight>
+			     <useStickyLeft><![CDATA[0]]></useStickyLeft>
+			     <useStickyRight><![CDATA[0]]></useStickyRight>
+			</sticky>
+		</sns_lamino_sticky>
+		<sns_lamino_cfg>
+
+<advance>
+	<customcss><![CDATA[]]></customcss>
+	<lessCompress><![CDATA[1]]></lessCompress>
+	<lessEnabled><![CDATA[1]]></lessEnabled>
+	<quickView><![CDATA[1]]></quickView>
+	<scrollToTop><![CDATA[1]]></scrollToTop>
+	<showCpanel><![CDATA[1]]></showCpanel>
+	<showTooltip><![CDATA[1]]></showTooltip>
+	<themeColor><![CDATA[#b5997c]]></themeColor>
+	<themeColor2><![CDATA[#d92d4d]]></themeColor2>
+</advance>
+<footer>
+	<staticblock_col1><![CDATA[lamino_footer_middle1]]></staticblock_col1>
+	<staticblock_col2><![CDATA[lamino_footer_middle2]]></staticblock_col2>
+	<staticblock_col3><![CDATA[lamino_footer_middle3]]></staticblock_col3>
+	<staticblock_col4><![CDATA[0]]></staticblock_col4>
+	<staticblock_col5><![CDATA[0]]></staticblock_col5>
+	<staticblock_col6><![CDATA[0]]></staticblock_col6>
+</footer>
+<general>
+	<bodyBgAttachment><![CDATA[fixed]]></bodyBgAttachment>
+	<bodyBgColor><![CDATA[#ffffff]]></bodyBgColor>
+	<bodyBgImage><![CDATA[pattern_0]]></bodyBgImage>
+	<bodyBgImage2><![CDATA[]]></bodyBgImage2>
+	<bodyBgPosition><![CDATA[center top]]></bodyBgPosition>
+	<bodyBgRepeat><![CDATA[repeat]]></bodyBgRepeat>
+	<dealsCountdown><![CDATA[1]]></dealsCountdown>
+	<effectImageHover><![CDATA[translatey]]></effectImageHover>
+	<fontFamily><![CDATA[tahoma]]></fontFamily>
+	<fontSize><![CDATA[12px]]></fontSize>
+	<googleFont><![CDATA[Alegreya:400,700]]></googleFont>
+	<googleFont1><![CDATA[Oswald]]></googleFont1>
+	<googleFont2><![CDATA[Lobster+Two:400,700]]></googleFont2>
+	<googleFontTargets><![CDATA[.block-title,#sns_header_bot,.mainnav &gt; li a,.level0 &gt; li  a,.banner-top,.products-grid,.testimonials_slider_in,.post-title,#sns_footer_middle h6,.wrap_dropdown h4,.mark,.slide,.toolbar label,.block-layered-nav,.block-compare,.price-box,button,.item-title,.product-name,h2,h3,.rating-links,.no-rating,.nav-tabs]]></googleFontTargets>
+	<googleFontTargets1><![CDATA[]]></googleFontTargets1>
+	<googleFontTargets2><![CDATA[]]></googleFontTargets2>
+	<layoutType><![CDATA[1]]></layoutType>
+	<styleHeader><![CDATA[transparent]]></styleHeader>
+	<useImageHover><![CDATA[1]]></useImageHover>
+	<useTagNew><![CDATA[1]]></useTagNew>
+	<useTagSale><![CDATA[1]]></useTagSale>
+</general>
+<install>
+	<overwrite_blocks><![CDATA[0]]></overwrite_blocks>
+	<overwrite_pages><![CDATA[0]]></overwrite_pages>
+</install>
+<listingpage>
+	<displayAddtocart><![CDATA[1]]></displayAddtocart>
+	<displayCompare><![CDATA[1]]></displayCompare>
+	<displayWishlist><![CDATA[1]]></displayWishlist>
+</listingpage>
+<menu>
+	<customItems><![CDATA[a:2:{s:18:&quot;_1424932001507_507&quot;;a:6:{s:5:&quot;title&quot;;s:4:&quot;Home&quot;;s:4:&quot;link&quot;;s:16:&quot;{{store url=&quot;&quot;}}&quot;;s:6:&quot;target&quot;;s:5:&quot;_self&quot;;s:8:&quot;position&quot;;s:5:&quot;first&quot;;s:8:&quot;block_id&quot;;s:1:&quot;0&quot;;s:6:&quot;status&quot;;s:1:&quot;0&quot;;}s:17:&quot;_1424932062051_51&quot;;a:6:{s:5:&quot;title&quot;;s:10:&quot;Contact us&quot;;s:4:&quot;link&quot;;s:24:&quot;{{store url='contacts'}}&quot;;s:6:&quot;target&quot;;s:5:&quot;_self&quot;;s:8:&quot;position&quot;;s:4:&quot;last&quot;;s:8:&quot;block_id&quot;;s:1:&quot;0&quot;;s:6:&quot;status&quot;;s:1:&quot;0&quot;;}}]]></customItems>
+	<keepMenu><![CDATA[0]]></keepMenu>
+	<resMenu><![CDATA[sidebar]]></resMenu>
+</menu>
+<ourpartners>
+	<bg_color><![CDATA[#944d4d]]></bg_color>
+	<bg_img><![CDATA[wysiwyg/lamino/bg_v.jpg]]></bg_img>
+	<enabled><![CDATA[1]]></enabled>
+	<partners><![CDATA[a:7:{s:18:&quot;_1425347985340_340&quot;;a:4:{s:5:&quot;title&quot;;s:5:&quot;Locks&quot;;s:4:&quot;link&quot;;s:0:&quot;&quot;;s:6:&quot;target&quot;;s:6:&quot;_blank&quot;;s:5:&quot;image&quot;;s:36:&quot;wysiwyg/lamino/partners/partner1.png&quot;;}s:18:&quot;_1425525939762_762&quot;;a:4:{s:5:&quot;title&quot;;s:9:&quot;Punchfork&quot;;s:4:&quot;link&quot;;s:0:&quot;&quot;;s:6:&quot;target&quot;;s:6:&quot;_blank&quot;;s:5:&quot;image&quot;;s:36:&quot;wysiwyg/lamino/partners/partner2.png&quot;;}s:18:&quot;_1425525981302_302&quot;;a:4:{s:5:&quot;title&quot;;s:4:&quot;Demo&quot;;s:4:&quot;link&quot;;s:0:&quot;&quot;;s:6:&quot;target&quot;;s:6:&quot;_blank&quot;;s:5:&quot;image&quot;;s:36:&quot;wysiwyg/lamino/partners/partner3.png&quot;;}s:18:&quot;_1425525997909_909&quot;;a:4:{s:5:&quot;title&quot;;s:4:&quot;Essa&quot;;s:4:&quot;link&quot;;s:0:&quot;&quot;;s:6:&quot;target&quot;;s:6:&quot;_blank&quot;;s:5:&quot;image&quot;;s:36:&quot;wysiwyg/lamino/partners/partner4.png&quot;;}s:18:&quot;_1425526017254_254&quot;;a:4:{s:5:&quot;title&quot;;s:8:&quot;Families&quot;;s:4:&quot;link&quot;;s:0:&quot;&quot;;s:6:&quot;target&quot;;s:6:&quot;_blank&quot;;s:5:&quot;image&quot;;s:36:&quot;wysiwyg/lamino/partners/partner5.png&quot;;}s:18:&quot;_1425526031765_765&quot;;a:4:{s:5:&quot;title&quot;;s:6:&quot;Lamino&quot;;s:4:&quot;link&quot;;s:0:&quot;&quot;;s:6:&quot;target&quot;;s:6:&quot;_blank&quot;;s:5:&quot;image&quot;;s:36:&quot;wysiwyg/lamino/partners/partner6.png&quot;;}s:18:&quot;_1425526306189_189&quot;;a:4:{s:5:&quot;title&quot;;s:5:&quot;Locks&quot;;s:4:&quot;link&quot;;s:0:&quot;&quot;;s:6:&quot;target&quot;;s:6:&quot;_blank&quot;;s:5:&quot;image&quot;;s:36:&quot;wysiwyg/lamino/partners/partner1.png&quot;;}}]]></partners>
+	<title><![CDATA[]]></title>
+</ourpartners>
+<productpage>
+	<customtabStaticblock><![CDATA[lamino_sticky_custom]]></customtabStaticblock>
+	<customtabStatus><![CDATA[1]]></customtabStatus>
+	<customtabTitle><![CDATA[Custom tab]]></customtabTitle>
+	<useAddThis><![CDATA[0]]></useAddThis>
+</productpage>
+<slidercategory>
+	<category><![CDATA[a:6:{s:18:&quot;_1425700915163_163&quot;;a:5:{s:5:&quot;title&quot;;s:7:&quot;Backbag&quot;;s:4:&quot;link&quot;;s:0:&quot;&quot;;s:4:&quot;item&quot;;s:1:&quot;1&quot;;s:6:&quot;target&quot;;s:6:&quot;_blank&quot;;s:5:&quot;image&quot;;s:39:&quot;wysiwyg/lamino/category/category_10.png&quot;;}s:18:&quot;_1425703881340_340&quot;;a:5:{s:5:&quot;title&quot;;s:7:&quot;Oxfords&quot;;s:4:&quot;link&quot;;s:0:&quot;&quot;;s:4:&quot;item&quot;;s:1:&quot;2&quot;;s:6:&quot;target&quot;;s:6:&quot;_blank&quot;;s:5:&quot;image&quot;;s:39:&quot;wysiwyg/lamino/category/category_03.png&quot;;}s:18:&quot;_1425703917229_229&quot;;a:5:{s:5:&quot;title&quot;;s:5:&quot;Denim&quot;;s:4:&quot;link&quot;;s:0:&quot;&quot;;s:4:&quot;item&quot;;s:1:&quot;4&quot;;s:6:&quot;target&quot;;s:6:&quot;_blank&quot;;s:5:&quot;image&quot;;s:39:&quot;wysiwyg/lamino/category/category_05.png&quot;;}s:18:&quot;_1425703945948_948&quot;;a:5:{s:5:&quot;title&quot;;s:4:&quot;Maxi&quot;;s:4:&quot;link&quot;;s:0:&quot;&quot;;s:4:&quot;item&quot;;s:1:&quot;6&quot;;s:6:&quot;target&quot;;s:6:&quot;_blank&quot;;s:5:&quot;image&quot;;s:39:&quot;wysiwyg/lamino/category/category_07.png&quot;;}s:18:&quot;_1425703969941_941&quot;;a:5:{s:5:&quot;title&quot;;s:7:&quot;Backbag&quot;;s:4:&quot;link&quot;;s:0:&quot;&quot;;s:4:&quot;item&quot;;s:1:&quot;9&quot;;s:6:&quot;target&quot;;s:6:&quot;_blank&quot;;s:5:&quot;image&quot;;s:39:&quot;wysiwyg/lamino/category/category_10.png&quot;;}s:17:&quot;_1425703979069_69&quot;;a:5:{s:5:&quot;title&quot;;s:7:&quot;Oxfords&quot;;s:4:&quot;link&quot;;s:0:&quot;&quot;;s:4:&quot;item&quot;;s:2:&quot;45&quot;;s:6:&quot;target&quot;;s:6:&quot;_blank&quot;;s:5:&quot;image&quot;;s:39:&quot;wysiwyg/lamino/category/category_03.png&quot;;}}]]></category>
+	<enabled><![CDATA[1]]></enabled>
+	<item><![CDATA[1]]></item>
+	<title><![CDATA[Choose by Categories]]></title>
+</slidercategory>
+<social>
+	<items><![CDATA[a:4:{s:18:&quot;_1404877041312_312&quot;;a:4:{s:5:&quot;title&quot;;s:9:&quot;SNS Theme&quot;;s:4:&quot;link&quot;;s:1:&quot;#&quot;;s:4:&quot;icon&quot;;s:9:&quot;fa-camera&quot;;s:6:&quot;target&quot;;s:5:&quot;_self&quot;;}s:18:&quot;_1404877043240_240&quot;;a:4:{s:5:&quot;title&quot;;s:9:&quot;SNS Theme&quot;;s:4:&quot;link&quot;;s:1:&quot;#&quot;;s:4:&quot;icon&quot;;s:12:&quot;fa-pinterest&quot;;s:6:&quot;target&quot;;s:5:&quot;_self&quot;;}s:18:&quot;_1404890310671_671&quot;;a:4:{s:5:&quot;title&quot;;s:9:&quot;SNS Theme&quot;;s:4:&quot;link&quot;;s:1:&quot;#&quot;;s:4:&quot;icon&quot;;s:10:&quot;fa-twitter&quot;;s:6:&quot;target&quot;;s:5:&quot;_self&quot;;}s:18:&quot;_1404890311224_224&quot;;a:4:{s:5:&quot;title&quot;;s:9:&quot;SNS Theme&quot;;s:4:&quot;link&quot;;s:1:&quot;#&quot;;s:4:&quot;icon&quot;;s:11:&quot;fa-facebook&quot;;s:6:&quot;target&quot;;s:5:&quot;_self&quot;;}}]]></items>
+	<status><![CDATA[1]]></status>
+</social>
+<storelocation>
+	<map_zoom><![CDATA[14]]></map_zoom>
+	<status><![CDATA[1]]></status>
+	<statusfooter><![CDATA[1]]></statusfooter>
+	<store_address><![CDATA[5 Avenue Anatole France 75007]]></store_address>
+	<store_email><![CDATA[contact@lamino.com]]></store_email>
+	<store_info><![CDATA[Responsive Magento Theme]]></store_info>
+	<store_name><![CDATA[Paris]]></store_name>
+	<store_phone><![CDATA[00-123-456-789]]></store_phone>
+</storelocation>
+<testimonial>
+	<bg_img><![CDATA[wysiwyg/lamino/bg_v1.jpg]]></bg_img>
+	<items><![CDATA[a:3:{s:18:&quot;_1417596355941_941&quot;;a:2:{s:11:&quot;description&quot;;s:332:&quot;Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.It has survived not only five centuries, but also the leap into electronic typesetting.&quot;;s:4:&quot;name&quot;;s:22:&quot;---- Adam Levine  ----&quot;;}s:18:&quot;_1417596357235_235&quot;;a:2:{s:11:&quot;description&quot;;s:332:&quot;Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.It has survived not only five centuries, but also the leap into electronic typesetting.&quot;;s:4:&quot;name&quot;;s:24:&quot;---- Nicola Mustone ----&quot;;}s:18:&quot;_1417596358188_188&quot;;a:2:{s:11:&quot;description&quot;;s:332:&quot;Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.It has survived not only five centuries, but also the leap into electronic typesetting.&quot;;s:4:&quot;name&quot;;s:21:&quot;---- Nicola Lina ----&quot;;}}]]></items>
+	<status><![CDATA[1]]></status>
+	<title><![CDATA[What people say ?]]></title>
+</testimonial>
+
+
+</sns_lamino_cfg>
+	</default>
+</config>

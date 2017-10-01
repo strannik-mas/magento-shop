@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<config>
+	<tabs>
+        <sns>
+            <label>SNSTheme.Com</label>
+            <sort_order>205</sort_order>
+        </sns>
+	</tabs> 
+    <sections>
+		<sns_quicksearch_cfg translate="label" module="quicksearch">
+           	<label>SNS Quick Search</label>
+			<tab>sns</tab>
+   	        <frontend_type>text</frontend_type>
+       	    <sort_order>100</sort_order>
+           	<show_in_default>1</show_in_default>
+           	<show_in_website>1</show_in_website>
+           	<show_in_store>1</show_in_store>
+            <groups>
+                <general translate="label">
+            		<label>General settings</label>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+						<isenabled translate="label" module="core">
+							<label>Enabled</label>
+							<sort_order>10</sort_order>
+							<frontend_type>select</frontend_type>
+                        	<source_model>adminhtml/system_config_source_yesno</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</isenabled>
+						<show_catfilter translate="label">
+                            <label>Category filter</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>11</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </show_catfilter>
+						<root_catalog translate="label">
+		            		<label>Root Catalog Id</label>
+							<source_model>quicksearch/system_config_source_ListCategories</source_model>
+							<comment>Please select one or more categories.</comment>
+		            		<frontend_type>select</frontend_type>
+		            		<sort_order>12</sort_order>
+		            		<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+                            <depends><show_catfilter>1</show_catfilter></depends>
+						</root_catalog>
+						<level translate="label">
+		            		<label>Max Level</label>
+		            		<frontend_type>select</frontend_type>
+							<source_model>quicksearch/system_config_source_ListLevel</source_model>
+		            		<sort_order>13</sort_order>
+		            		<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+                            <depends><show_catfilter>1</show_catfilter></depends>
+						</level>
+						
+						<show_popular translate="label">
+                            <label>Show Popular Search</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>15</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </show_popular>
+						<limit_popular translate="label">
+                            <label>Limit Popular</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><show_popular>1</show_popular></depends>
+                        </limit_popular>
+						<show_more translate="label">
+                            <label>Show More Popular Search</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>25</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><show_popular>1</show_popular></depends>
+                        </show_more>
+                        <more_text translate="label">
+                            <label>Show More Text</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>27</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><show_more>1</show_more></depends>
+                            <depends><show_popular>1</show_popular></depends>
+                        </more_text>
+						<show_advanced translate="label">
+                            <label>Show Advanced Search</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </show_advanced>
+					</fields>
+            	</general>
+            </groups>
+        </sns_quicksearch_cfg>
+	</sections>
+</config>

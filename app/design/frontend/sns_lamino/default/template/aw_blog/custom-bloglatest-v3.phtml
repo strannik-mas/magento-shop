@@ -1,0 +1,91 @@
+<?php
+
+ $posts = $this->getPosts();
+// echo "<pre>";
+//var_dump($posts);exit;
+ // echo "</pre>"; 
+ ?>
+<?php
+	if($posts) :
+	$blockId ='sns_latestblog_'.rand().time();
+?>
+<div class="block block-latestblog" id="<?php echo $blockId; ?>">
+	<div class="block-title">
+		<strong><?php echo $this->__('LATEST BLOGS');?></strong>
+		<div class="navslider">
+			<a class="prev" href="#"><i class="fa fa-angle-left"></i></a>
+			<a class="next" href="#"><i class="fa fa-angle-right"></i></a>
+		</div>
+	</div>
+	<div class="block-content">
+	    <div class="list-blog">
+	    <?php $j=0; foreach ($posts as $post): ?>
+	        <?php
+			
+		        $j++;
+		        if($j>7) break;
+			?>
+	        <div class="item-post<?php echo ($j==3)?' last':'';?> clearfix">
+	            <?php
+					
+		            $str = $post->getPostContent();
+		            $str = preg_replace ( "/\<img[^\>]*>/", '', $post->getPostContent());
+	            ?>
+	            <a class="post-img banner2" title="<?php echo $post->getTitle(); ?>" href="<?php echo $post->getAddress(); ?>" >
+	                <?php $imgUrl = Mage::helper('lamino/data')->getImgUrl($post->getPostContent()); ?>
+	                <img <?php echo $imgUrl; ?> alt="<?php echo $post->getTitle(); ?>" />
+	            </a>
+	            <div class="post-title">
+	                <a href="<?php echo $post->getAddress(); ?>" ><?php echo $post->getTitle(); ?></a>
+	            </div>
+	            <div class="date">
+	            	<i class="fa fa-calendar"></i>
+	                <?php $_ct= new Zend_Date($post->getCreatedTime()); ?>
+	                <span class="d-month"><?php echo $_ct->toString('MMM'); ?> </span>
+	                <span class="d-day"><?php echo $_ct->toString('d');  ?>, </span>
+	            	<span class="d-year"><?php echo $_ct->toString('YYYY'); ?></span>
+	            </div>
+	            <div class="post-content">
+	                <?php echo Mage::helper('core/string')->truncate($str, 150); ?>
+	            </div>
+				  <a class="read-more button" href="<?php echo $post->getAddress(); ?>" ><?php echo $this->__('Read more'); ?></a>
+	        </div>
+	    <?php endforeach; ?>
+	    </div>
+	</div>
+	<script>
+		jQuery(document).ready(function($) {
+			$(window).load(function(){
+				$('#<?php echo $blockId; ?> .list-blog').owlCarousel({
+					itemsCustom: [
+						[0, 1],
+						[480, 2],
+						[768, 1],
+						[992, 2]
+					],
+					pagination: false,
+					itemsScaleUp : true,
+					slideSpeed : 800,
+					autoPlay: false,
+					addClassActive: true,
+					afterAction: function (e) {
+					    if(this.$owlItems.length > this.options.items){
+					        $('#<?php echo $blockId; ?> .navslider').show();
+					    }else{
+					        $('#<?php echo $blockId; ?> .navslider').hide();
+					    }
+					}
+				});
+				$('#<?php echo $blockId; ?> .navslider .prev').on('click', function(e){
+					e.preventDefault();
+					$('#<?php echo $blockId; ?> .list-blog').trigger('owl.prev');
+				});
+				$('#<?php echo $blockId; ?> .navslider .next').on('click', function(e){
+					e.preventDefault();
+					$('#<?php echo $blockId; ?> .list-blog').trigger('owl.next');
+				});
+			});
+		});
+	</script>
+</div>
+<?php endif; ?>

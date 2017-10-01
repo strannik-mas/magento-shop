@@ -1,0 +1,94 @@
+<?php
+	$themeCfg = Mage::helper('lamino/data');
+	$testimonialStyle = '';
+	$bgImg = Mage::helper('cms')->getBlockTemplateProcessor()->filter($themeCfg->getField('testimonial_bg_img'));
+	if (preg_match('/^wysiwyg/i', $bgImg)) {
+		$bgImg = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).$bgImg;
+		$testimonialStyle .= 'background-image: url(\''.$bgImg.'\');';
+	}
+	$enabled = $themeCfg->getField('testimonial_status');
+	if($enabled == 1) :
+		$testimonials = $themeCfg->getField('testimonial_items');
+		$array_testimonials = unserialize($testimonials);
+		$collect_testimonials = array();
+		foreach($array_testimonials as $key=>$testimonial){
+			$testimonial['description'] = Mage::helper('cms')->getBlockTemplateProcessor()->filter($testimonial['description']);
+			$collect_testimonials[] = $testimonial;
+		}
+
+
+if($collect_testimonials) :
+	$blockId ='sns_testimonial_'.rand().time();
+?>
+<div class="block_border sns_testimonial" id="<?php echo $blockId; ?>" style="<?php echo $testimonialStyle; ?>">
+	<div class="testimonial">
+		<div class="container">
+			<h1><?php echo $themeCfg->getField('testimonial_title'); ?></h1>
+			<div class="navslider">
+				<a class="prev" href="#"><i class="fa fa-long-arrow-left"></i></a>
+				<a class="next" href="#"><i class="fa fa-long-arrow-right"></i></a>
+			</div>
+			<div class="block_content testimonials_slider">
+				<div class="testimonials_slider_in">
+					<div class="our_testimonials" style="display: none;">
+						<?php foreach($collect_testimonials as $testimonial) : ?>
+							<div class="wrap">
+								<div class="info">
+									<i class="fa fa-quote-left"></i>
+									<p><?php echo $testimonial['description']; ?></p>
+									<div class="tes-info">
+										<span><?php echo $testimonial['name']; ?></span>
+									</div>
+									<i class="fa fa-quote-right"></i>
+								</div>
+							</div>
+						<?php endforeach; ?>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		jQuery(document).ready(function($) {
+				$(window).load(function(){
+					$('#<?php echo $blockId; ?> .our_testimonials').owlCarousel({
+						itemsCustom: [
+							[0, 1],
+							[480, 1],
+							[768, 1],
+							[992, 1]
+						],					
+					itemsScaleUp : true,				
+					paginationSpeed: 3000,
+					rewindSpeed: 3000,
+					stopOnHover: true,
+					autoPlay: 4000,					
+					navigation: false,					
+					pagination: false,
+					slideSpeed : 800,
+					addClassActive: true,
+					scrollPerPage: true,
+					
+					afterAction: function (e) {
+						 if(this.$owlItems.length > this.options.items){
+								$('#<?php echo $blockId; ?> .navslider').show();
+							}else{
+								$('#<?php echo $blockId; ?> .navslider').hide();
+							}
+					}
+					});
+				});
+				$('#<?php echo $blockId; ?> .navslider .prev').on('click', function(e){
+						e.preventDefault();
+						$('#<?php echo $blockId; ?> .our_testimonials').trigger('owl.prev');
+					});
+					$('#<?php echo $blockId; ?> .navslider .next').on('click', function(e){
+						e.preventDefault();
+						$('#<?php echo $blockId; ?> .our_testimonials').trigger('owl.next');
+					});
+			
+		});
+	</script>
+</div>
+<?php endif; ?>
+<?php endif; ?>

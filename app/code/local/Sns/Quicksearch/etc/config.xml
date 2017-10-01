@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<config>
+	<global>
+		<models>
+            <quicksearch>
+                <class>Sns_Quicksearch_Model</class>
+            </quicksearch>
+        </models>
+		<blocks>
+            <quicksearch>
+                <class>Sns_Quicksearch_Block</class>
+            </quicksearch>            		
+        </blocks>				
+		<helpers>
+            <quicksearch>
+                <class>Sns_Quicksearch_Helper</class>
+            </quicksearch>
+        </helpers>
+        <resources>
+        	<quicksearch_setup>
+        		<setup>
+        			<module>Sns_Quicksearch</module>
+        		</setup>
+        	</quicksearch_setup>
+        </resources>
+	</global>
+	<frontend>
+        <routers>
+			<quicksearch>
+                <use>standard</use>
+                <args>
+                    <module>Sns_Quicksearch</module>
+                    <frontName>quicksearch</frontName>
+                </args>
+            </quicksearch>
+        </routers>
+		<layout>
+            <updates>
+                <quicksearch module="Sns_Quicksearch">
+					<file>sns/quicksearch.xml</file>
+                </quicksearch>
+            </updates>
+        </layout>
+        <translate>
+      		<modules>
+          		<Sns_Quicksearch>
+                     <files>
+                          <default>Sns_Quicksearch.csv</default>
+                     </files>
+                </Sns_Quicksearch>
+            </modules>
+        </translate>
+	</frontend>
+	<adminhtml>
+        <translate>
+      		<modules>
+          		<Sns_Quicksearch>
+                     <files>
+                          <default>Sns_Quicksearch.csv</default>
+                     </files>
+                </Sns_Quicksearch>
+            </modules>
+        </translate>
+		<menu>
+			<snstheme>
+				<title>SNS Theme</title>
+				<sort_order>87</sort_order>
+				<children>
+					<quicksearch>
+						<title>SNS Quicksearch</title>
+						<sort_order>87</sort_order>
+						<action>adminhtml/system_config/edit/section/sns_quicksearch_cfg/</action>
+					</quicksearch>
+				</children>
+			</snstheme>
+		</menu>
+		<acl>
+			<resources>
+				<admin>
+					<children>
+						<system>
+							<children>
+								<config>
+									<children>										
+										<sns_quicksearch_cfg translate="title" module="quicksearch">
+											<title>SNS Quicksearch</title>
+										</sns_quicksearch_cfg>
+									</children>
+								</config>
+							</children>
+						</system>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+	</adminhtml>
+	<default>
+        <sns_quicksearch_cfg>
+
+<general>
+	<isenabled><![CDATA[1]]></isenabled>
+	<limit_popular><![CDATA[5]]></limit_popular>
+	<show_advanced><![CDATA[0]]></show_advanced>
+	<show_catfilter><![CDATA[0]]></show_catfilter>
+	<show_more><![CDATA[0]]></show_more>
+	<show_popular><![CDATA[0]]></show_popular>
+</general>
+
+
+</sns_quicksearch_cfg>
+    </default>
+</config>

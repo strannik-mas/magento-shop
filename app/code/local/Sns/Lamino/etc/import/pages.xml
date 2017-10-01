@@ -1,0 +1,16 @@
+
+<root>
+  <pages>
+    <cms_block>
+      <title>Lamino - Responsive Magento Theme</title>
+      <identifier>lamino_home_page</identifier>
+      <content><![CDATA[<div style="display: none;">sns</div>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+      <root_template>one_column</root_template>
+      <layout_update_xml><![CDATA[]]></layout_update_xml>
+    </cms_block>
+  </pages>
+</root>

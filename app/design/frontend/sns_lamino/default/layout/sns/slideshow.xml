@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<layout version="1.0">
+	<default>
+        <reference name="head">
+            <action method="addJs"><script>sns/jquery/jquery.js</script></action>
+            <action method="addJs"><script>sns/jquery/jquery-noconflict.js</script></action>
+            <action method="addJs"><script>sns/jssor/js/jssor.js</script></action>
+            <action method="addJs"><script>sns/jssor/js/jssor.slider.min.js</script></action>
+        	<action method="addItem"><type>js_css</type><name>sns/jssor/css/style.css</name></action>
+        </reference>
+	</default>
+</layout>

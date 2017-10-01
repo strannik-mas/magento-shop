@@ -1,0 +1,85 @@
+/*------------------------------------------------------------------------
+ * Copyright (C) 2013 The SNS Group. All Rights Reserved.
+ * @license - GNU/GPL, http://www.gnu.org/licenses/gpl.html
+ * Author: SNS Group
+ * Websites: http://www.snstheme.com
+-------------------------------------------------------------------------*/
+.ratings, .no-rating {
+	margin: 0 0 5px; 
+	font-size:115%;
+}
+/*--- rating ---*/
+.rating-box{
+    position: relative;
+    font-size:14px;
+    .inline-block();
+    margin: 0;
+    &:before {
+		content: '\f005\f005\f005\f005\f005';
+		display: inline-block;
+		font-family: FontAwesome;
+		font-style: normal;
+		font-weight: normal;
+		line-height: 1;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		text-align: center;
+		letter-spacing: 2px;
+		color: #cccccc;
+		white-space: nowrap;
+    }
+    
+	.rating {
+		left: 0;
+		position: absolute;
+		top: 0;
+		height: 100%;
+		overflow: hidden;
+		&:before {
+			content: '\f005\f005\f005\f005\f005';
+			white-space: nowrap;
+			display: inline-block;
+			font-family: FontAwesome;
+			font-style: normal;
+			font-weight: normal;
+			line-height: 1;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+			text-align: center;
+			letter-spacing: 2px;
+			color: #ffcc00;
+		}
+	}
+}
+.no-rating a{
+	color: #888;
+	&:hover{color: @color1;}
+}
+.rating-links {
+	.inline-block();
+	margin: 0;
+	.separator {color: #888;}
+	a {
+		margin: 0 1px;
+		color: @color1;
+		&:hover{color: @color2;}
+	}
+}
+.no-rating-mixin (){
+	.clearfix();
+	&:before {
+		content: '\f005\f005\f005\f005\f005';
+		display: inline-block;
+		font-family: FontAwesome;
+		font-style: normal;
+		font-weight: normal;
+		line-height: 1;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		text-align: center;
+		letter-spacing: 2px;
+		color: #dfdfdf;
+		white-space: nowrap;
+	}
+	a { display: none; }
+}

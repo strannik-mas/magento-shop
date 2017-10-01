@@ -1,0 +1,15 @@
+<?php
+	$themeconfig = Mage::helper('lamino/data');
+?>
+<div class="block">
+	<div class="block-title"><?php echo $this->__('Find Us'); ?></div>
+    <div id="contact_gmap">
+    	<div id="google_map" style="height: 230px"></div>
+    	<?php echo $this->getLayout()->createBlock('core/template')->setTemplate('sns/blocks/utilities/gmap.phtml')->toHtml(); ?>
+    </div>
+	<ul class="fa-ul">
+		<li><i class="fa-li" data-icon="&#xe01d;"></i><?php echo $themeconfig->getField('storelocation_store_address'); ?></li>
+		<li><i class="fa-li" data-icon="&#xe00b;"></i><?php echo $themeconfig->getField('storelocation_store_phone'); ?></li>
+		<li><i class="fa-li" data-icon="&#xe010;"></i><a href="mailto:<?php echo $themeconfig->getField('storelocation_store_email'); ?>"><?php echo $themeconfig->getField('storelocation_store_email'); ?></a></li>
+	</ul>
+</div>

@@ -1,0 +1,43 @@
+<?xml version="1.0"?>   
+<layout version="1.0">
+	<default>
+   <!--      <reference name="content">
+			<block type="products/grid" name="sns.products.grid">
+				<action method="setConfig">
+					<name>
+						<title>products/grid</title>
+					</name>
+				</action>
+			</block>
+			<block type="products/list" name="sns.products.list">
+				<action method="setConfig">
+					<name>
+						<title>products/list</title>
+					</name>
+				</action>
+			</block>
+			<block type="products/deals" name="sns.products.deals">
+				<action method="setConfig">
+					<name>
+						<title>products/deals</title>
+					</name>
+				</action>
+			</block>
+			<block type="products/slider" name="sns.products.slider">
+				<action method="setConfig">
+					<name>
+						<title>products/slider</title>
+					</name>
+				</action>
+			</block>
+			<block type="products/sale" name="sns.products.sale">
+				<action method="setConfig">
+					<name>
+						<title>products/sale</title>
+					</name>
+				</action>
+			</block>
+        </reference> -->
+    </default>
+</layout>   
+	

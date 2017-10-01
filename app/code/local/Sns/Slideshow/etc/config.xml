@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Sns_Slideshow>
+			<version>1.0.0</version>
+			<title>Sns Slideshow</title>
+		</Sns_Slideshow>
+	</modules>
+	<global>
+		<models>
+            <slideshow>
+                <class>Sns_Slideshow_Model</class>
+            </slideshow>
+        </models>
+		<blocks>
+            <slideshow>
+                <class>Sns_Slideshow_Block</class>
+            </slideshow>
+        </blocks>
+		<helpers>
+            <slideshow>
+                <class>Sns_Slideshow_Helper</class>
+            </slideshow>
+        </helpers>
+        <resources>
+        	<sns_slideshow_setup>
+        		<setup>
+        			<module>Sns_Slideshow</module>
+        		</setup>
+        	</sns_slideshow_setup>
+        </resources>
+	</global>
+	<frontend>
+        <routers>
+			<slideshow>
+                <use>standard</use>
+                <args>
+                    <module>Sns_Slideshow</module>
+                    <frontName>sns_slideshow</frontName>
+                </args>
+            </slideshow>
+        </routers>
+		<layout>
+            <updates>
+                <slideshow>
+					<file>sns/slideshow.xml</file>
+                </slideshow>
+            </updates>
+        </layout>
+	</frontend>
+	<adminhtml>
+		<menu>
+			<snstheme>
+				<title>SNS Theme</title>
+				<sort_order>87</sort_order>
+				<children>
+					<slideshow>
+						<title>SNS Slideshow</title>
+						<sort_order>87</sort_order>
+						<action>adminhtml/system_config/edit/section/sns_slideshow_cfg/</action>
+					</slideshow>
+				</children>
+			</snstheme>
+		</menu>
+		<acl>
+			<resources>
+				<admin>
+					<children>
+						<system>
+							<children>
+								<config>
+									<children>
+										<sns_slideshow_cfg translate="title" module="slideshow">
+											<title>SNS Slideshow</title>
+										</sns_slideshow_cfg>
+									</children>
+								</config>
+							</children>
+						</system>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+	</adminhtml>
+	<default>
+		<sns_slideshow_cfg>
+
+<general>
+	<autoplay><![CDATA[300000]]></autoplay>
+	<pauseonhover><![CDATA[1]]></pauseonhover>
+	<rand_transition><![CDATA[1]]></rand_transition>
+	<slides_html><![CDATA[lamino_slide_html1,lamino_slide_html2,lamino_slide_html3]]></slides_html>
+	<slide_height><![CDATA[578]]></slide_height>
+	<slide_transitions><![CDATA[rotateoverlap,switch,rotaterelay,doors,rotateinplusoutminus,flytwins,rotateinminusoutplus,rotateaxisupoverlap,chessreplacetb,chessreplacelr,shifttb,shiftlr,returntb,returnlr,rotateaxisdown,extrudereplace,fade,fadeinl,fadeinr,fadeint,fadeinb,fadeinlr,fadeinlrchess,fadeintb,fadeintbchess,fadeincorners,fadeoutl,fadeoutr,fadeoutt,fadeoutb,fadeoutlr,fadeoutlrchess,fadeouttb,fadeouttbchess,fadeoutcorners,fadeflyinl,fadeflyinr,fadeflyint,fadeflyinb,fadeflyinlr,fadeflyinlrchess,fadeflyintb,fadeflyintbchess,fadeflyincorners,fadeflyoutl,fadeflyoutr,fadeflyoutt,fadeflyoutb,fadeflyoutlr,fadeflyoutlrchess,fadeflyouttb,fadeflyouttbchess,fadeflyoutcorners,fadeclipinh,fadeclipinv,fadeclipouth,fadeclipoutv,fadestairs,faderandom,fadeswirl,fadezigzag,swingoutsideinstairs,swingoutsideinzigzag,swingoutsideinswirl,swingoutsideinrandom,swingoutsideinrandomchess,swingoutsideinsquare,swingoutsideoutstairs,swingoutsideoutzigzag,swingoutsideoutswirl,swingoutsideoutrandom,swingoutsideoutrandomchess,swingoutsideoutsquare,swinginsideinstairs,swinginsideinzigzag,swinginsideinswirl,swinginsideinrandom,swinginsideinrandomchess,swinginsideinsquare,swinginsideoutzigzag,swinginsideoutswirl,dodgedanceoutsideinstairs,dodgedanceoutsideinswirl,dodgedanceoutsideinzigzag,dodgedanceoutsideinrandom,dodgedanceoutsideinrandomchess,dodgedanceoutsideinsquare,dodgedanceoutsideoutstairs,dodgedanceoutsideoutswirl,dodgedanceoutsideoutzigzag,dodgedanceoutsideoutrandom,dodgedanceoutsideoutrandomchess,dodgedanceoutsideoutsquare,dodgedanceinsideinstairs,dodgedanceinsideinswirl,dodgedanceinsideinzigzag,dodgedanceinsideinrandom,dodgedanceinsideinrandomchess,dodgedanceinsideinsquare,dodgedanceinsideoutstairs,dodgedanceinsideoutswirl,dodgedanceinsideoutzigzag,dodgedanceinsideoutrandom,dodgedanceinsideoutrandomchess,dodgedanceinsideoutsquare,dodgepetoutsideinstairs,dodgepetoutsideinswirl,dodgepetoutsideinzigzag,dodgepetoutsideinrandom,dodgepetoutsideinrandomchess,dodgepetoutsideinsquare,dodgepetoutsideoutstairs,dodgepetoutsideoutswirl,dodgepetoutsideoutzigzag,dodgepetoutsideoutrandom,dodgepetoutsideoutrandomchess,dodgepetoutsideoutsquare,dodgepetinsideinstairs,dodgepetinsideinswirl,dodgepetinsideinzigzag,dodgepetinsideinrandom,dodgepetinsideinrandomchess,dodgepetinsideinsquare,dodgepetinsideoutstairs,dodgepetinsideoutswirl,dodgepetinsideoutzigzag,dodgepetinsideoutrandom,dodgepetinsideoutrandomchess,dodgepetinsideoutsquare,dodgeoutsideoutstairs,dodgeoutsideoutswirl,dodgeoutsideoutzigzag,dodgeoutsideoutrandom,dodgeoutsideoutrandomchess,dodgeoutsideoutsquare,dodgeoutsideinstairs,dodgeoutsideinswirl,dodgeoutsideinzigzag,dodgeoutsideinrandom,dodgeoutsideinrandomchess,dodgeoutsideinsquare,dodgeinsideoutstairs,dodgeinsideoutswirl,dodgeinsideoutzigzag,dodgeinsideoutrandom,dodgeinsideoutrandomchess,dodgeinsideoutsquare,dodgeinsideinstairs,dodgeinsideinswirl,dodgeinsideinzigzag,dodgeinsideinrandom,dodgeinsideinrandomchess,dodgeinsideinsquare,dodgeinsideintl,dodgeinsideintr,dodgeinsideinbl,dodgeinsideinbr,dodgeinsideouttl,dodgeinsideouttr,dodgeinsideoutbl,dodgeinsideoutbr,flutteroutsidein,flutteroutsideinwind,flutteroutsideinswirl,flutteroutsideincolumn,flutteroutsideout,flutteroutsideoutwind,flutteroutsideoutswirl,flutteroutsideoutcolumn,flutterinsidein,flutterinsideinwind,flutterinsideinswirl,flutterinsideincolumn,flutterinsideout,flutterinsideoutwind,flutterinsideoutswirl,flutterinsideoutcolumn,rotatevdoubleplusin,rotatehdoubleplusin,rotatevdoubleminusin,rotatehdoubleminusin,rotatevdoubleplusout,rotatehdoubleplusout,rotatevdoubleminusout,rotatehdoubleminusout,rotatevforkplusin,rotatehforkplusin,rotatevforkplusout,rotatehforkplusout,rotatezoomplusin,rotatezoomplusinl,rotatezoomplusinr,rotatezoomplusint,rotatezoomplusinb,rotatezoomplusintl,rotatezoomplusintr,rotatezoomplusinbl,rotatezoomplusinbr,rotatezoomplusout,rotatezoomplusoutl,rotatezoomplusoutr,rotatezoomplusoutt,rotatezoomplusoutb,rotatezoomplusouttl,rotatezoomplusouttr,rotatezoomplusoutbl,rotatezoomplusoutbr,rotatezoomminusin,rotatezoomminusinl,rotatezoomminusinr,rotatezoomminusint,rotatezoomminusinb,rotatezoomminusintl,rotatezoomminusintr,rotatezoomminusinbl,rotatezoomminusinbr,rotatezoomminusout,rotatezoomminusoutl,rotatezoomminusoutr,rotatezoomminusoutt,rotatezoomminusoutb,rotatezoomminusouttl,rotatezoomminusouttr,rotatezoomminusoutbl,rotatezoomminusoutbr,zoomvdoubleplusin,zoomhdoubleplusin,zoomvdoubleminusin,zoomhdoubleminusin,zoomvdoubleplusout,zoomhdoubleplusout,zoomvdoubleminusout,zoomhdoubleminusout,zoomplusin,zoomplusinl,zoomplusinr,zoomplusint,zoomplusinb,zoomplusintl,zoomplusintr,zoomplusinbl,zoomplusinbr,zoomplusout,zoomplusoutl,zoomplusoutr,zoomplusoutt,zoomplusoutb,zoomplusouttl,zoomplusouttr,zoomplusoutbl,zoomplusoutbr,zoomminusin,zoomminusinl,zoomminusinr,zoomminusint,zoomminusinb,zoomminusintl,zoomminusintr,zoomminusinbl,zoomminusinbr,zoomminusout,zoomminusoutl,zoomminusoutr,zoomminusoutt,zoomminusoutb,zoomminusouttl,zoomminusouttr,zoomminusoutbl,zoomminusoutbr,collapsestairs,collapseswirl,collapsesquare,collapserectanglecross,collapserectangle,collapsecross,collapsecircle,collapsezigzag,collapserandom,expandstairs,expandstraight,expandswirl,expandsquare,expandrectanglecross,expandrectangle,expandcross,expandzigzag,expandrandom,dominoesstripe,extrudeoutstripe,extrudeinstripe,horizontalblindstripe,verticalblindstripe,horizontalstripe,verticalstripe,horizontalmovingstripe,verticalmovingstripe,horizontalfadestripe,verticalfadestripe,horizontalflystripe,verticalflystripe,horizontalchessstripe,verticalchessstripe,horizontalrandomfadestripe,verticalrandomfadestripe,horizontalbouncestripe,verticalbouncestripe,waveout,waveouteagle,waveoutswirl,waveoutzigzag,waveoutsquare,waveoutrectangle,waveoutcircle,waveoutcross,waveoutrectanglecross,wavein,waveineagle,waveinswirl,waveinzigzag,waveinsquare,waveinrectangle,waveincircle,waveincross,waveinrectanglecross,jumpoutstraight,jumpoutswirl,jumpoutzigzag,jumpoutsquare,jumpoutsquarewithchess,jumpoutrectangle,jumpoutcircle,jumpoutrectanglecross,jumpinstraight,jumpinswirl,jumpinzigzag,jumpinsquare,jumpinsquarewithchess,jumpinrectangle,jumpincircle,jumpinrectanglecross,parabolaswirlin,parabolaswirlout,parabolazigzagin,parabolazigzagout,parabolastairsin,parabolastairsout,floatrightrandom,floatuprandom,floatuprandomwithchess,floatrightzigzag,floatupzigzag,floatupzigzagwithchess,floatrightswirl,floatupswirl,floatupswirlwithchess,flyrightrandom,flyuprandom,flyuprandomwithchess,flyrightzigzag,flyupzigzag,flyupzigzagwithchess,flyrightswirl,flyupswirl,flyupswirlwithchess,slidedown,slideright,bouncedown,bounceright]]></slide_transitions>
+	<slide_width><![CDATA[1920]]></slide_width>
+	<title><![CDATA[SNS Slideshow]]></title>
+</general>
+
+
+</sns_slideshow_cfg>
+    </default>
+</config>

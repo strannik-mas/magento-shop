@@ -1,0 +1,113 @@
+<?php
+	$themeCfg = Mage::helper('lamino/data');
+	$partnersStyle = '';
+	$bgColor = $themeCfg->getField('ourpartners_bg_color');
+	$bgImg = Mage::helper('cms')->getBlockTemplateProcessor()->filter($themeCfg->getField('ourpartners_bg_img'));
+
+	if (preg_match('/^wysiwyg/i', $bgImg)) {
+		$bgImg = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).$bgImg;
+		$partnersStyle .= 'background-image: url(\''.$bgImg.'\');';
+	}
+
+	$partnersStyle .= ($bgColor) ? 'background-color: '.$bgColor.';' : '';
+
+	$enabled = $themeCfg->getField('ourpartners_enabled');
+	if($enabled == 1) :
+		$partners = $themeCfg->getField('ourpartners_partners');
+		$array_partners = unserialize($partners);
+		$id = 1;
+		$collect_partners = array();
+		foreach($array_partners as $key=>$partner){
+			$partner['id'] = $id;
+			$partner['image'] = Mage::helper('cms')->getBlockTemplateProcessor()->filter($partner['image']);
+			if (preg_match('/^wysiwyg/i', $partner['image'])) {
+				$partner['image'] = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).$partner['image'];
+			}
+			$partner['link'] = Mage::helper('cms')->getBlockTemplateProcessor()->filter($partner['link']);
+			$haveHttp =  strpos(trim($partner['link']), "http://"); 
+			if(!$haveHttp && ($haveHttp!==0)){
+				//$partner['link'] = "http://" . trim($partner['link']);  
+			}else {
+				//$partner['link'] = trim($partner['link']);
+			}
+			
+			
+			$partner['title'] = $partner['title'];
+			$collect_partners[] = $partner;
+			$id++;
+		}
+if($collect_partners) :
+	$blockId ='sns_partner_'.rand().time();
+?>
+<div id="sns_partners" class="wrap" style="<?php echo $partnersStyle; ?>">
+	<div class="partners">
+		<div class="container">
+			<div class="sns_partner" id="<?php echo $blockId; ?>">
+				<div class="block_head">
+					<div class="title"><span><?php echo $this->__($themeCfg->getField('ourpartners_title')); ?></span>
+					</div>					
+				</div>
+				<div class="navslider">
+					<a class="prev" href="#"><i class="fa fa-long-arrow-left"></i></a>
+					<a class="next" href="#"><i class="fa fa-long-arrow-right"></i></a>
+				</div>
+				<div class="partners_slider slider-wrap">
+					<div class="partners_slider_in">
+						<div class="our_partners" style="display: none;">
+							<?php foreach($collect_partners as $partner) : ?>
+								<div class="wrap">
+									<div class="wrap_in">
+										<a target="_blank" href="<?php echo $partner['link']; ?>">
+											<img alt="" src="<?php echo $partner['image']; ?>" />
+										</a>
+									</div>
+								</div>
+							<?php endforeach; ?>
+						</div>
+					</div>
+				</div>
+				<script>
+					jQuery(document).ready(function($) {
+						$(window).load(function(){
+							$('#<?php echo $blockId; ?> .our_partners').owlCarousel({
+								itemsCustom: [
+									[0, 1],
+									[480, 2],
+									[768, 3],
+									[992, 4],
+									[1200, 6]
+								],							
+								pagination: false,
+								itemsScaleUp : true,
+								slideSpeed :400,
+								paginationSpeed: 3000,
+								rewindSpeed: 3000,
+								stopOnHover: true,
+								autoPlay: 4000,
+								addClassActive: true,
+								navigation: false,
+								afterAction: function (e) {
+									if(this.$owlItems.length > this.options.items){
+										$('#<?php echo $blockId; ?> .navslider').show();
+									}else{
+										$('#<?php echo $blockId; ?> .navslider').hide();
+									}
+								}
+							});
+						});
+						$('#<?php echo $blockId; ?> .navslider .prev').on('click', function(e){
+							e.preventDefault();
+							$('#<?php echo $blockId; ?> .our_partners').trigger('owl.prev');
+						});
+						$('#<?php echo $blockId; ?> .navslider .next').on('click', function(e){
+							e.preventDefault();
+							$('#<?php echo $blockId; ?> .our_partners').trigger('owl.next');
+						});
+					});
+				</script>
+			</div>
+		</div>
+	</div>
+</div>
+<?php endif; ?>
+<?php endif; ?>

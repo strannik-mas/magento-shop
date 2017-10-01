@@ -1,0 +1,83 @@
+body .fancybox-overlay{
+    background: rgba(0,0,0,0.5);
+}
+
+.background-overlay {
+    background-color: #000;
+    left: 0;
+    opacity: 0.5;
+    top: 0;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+#proaddto_loading {
+    display: none;
+    font-size: 1.1em;
+    font-weight: bold;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    z-index: 20002;
+}
+body #fancybox-loading,
+#sns_loading_container{
+    position: fixed; left: 50%; top: 50%; width: 60px; height: 60px; margin: -30px 0 0 -30px; background: #FFF; z-index: 10002;
+    text-align: center; opacity: 1; box-shadow: none; padding: 0 0;
+    border-radius: 6px; 
+    -webkit-border-radius: 6px; 
+    -o-border-radius: 6px; 
+    -moz-border-radius: 6px; 
+}
+#sns_loading_container i{
+    font-size: 30px; vertical-align: middle; line-height: 60px;
+}
+body #fancybox-loading:before{
+    font-size: 30px; vertical-align: middle; line-height: 60px; background: none; display: block;
+    font-family: FontAwesome;
+    content: "\f110"; height: 100%; width: 100%;
+    -webkit-animation: fa-spin 2s infinite linear;
+    animation: fa-spin 2s infinite linear;
+}
+
+
+body #fancybox-loading div{
+    display: none;
+}
+.sns-btnproaddto-wrap button{margin: 10px 0 0;}
+#proaddto_confirmbox {
+    display: none;
+    font-size: 1.1em;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    z-index: 20002;
+}
+#sns_msg_container {
+    background: none repeat scroll 0 0 #ffffff;
+    line-height: 1.4;
+    margin: auto;
+    padding: 20px 15px;
+    position: relative;
+    text-align: center;
+    top: 35%;
+    width: 300px;
+    z-index: 1000;
+}
+#sns_msg_container .timer {
+    border-left: 1px solid #ccc; background: #FFF;  position: absolute; top: 21px; right: -20px;
+    line-height: 20px; font-size: 11px; height: 20px; width: 20px; display: inline-block; font-weight: bold;
+}
+#sns_msg_container .btn-close{
+    position: absolute; top: 0px; right: -20px;height: 20px; width: 20px; display: inline-block; cursor: pointer;
+    background: #FFF; border-left: 1px solid #ccc;
+}
+#sns_msg_container .btn-close i{line-height: 20px}
+#sns_msg_container .product-name{font-weight: bold;}
+

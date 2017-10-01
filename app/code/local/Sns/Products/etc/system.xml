@@ -1,0 +1,172 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <sns>
+            <label>SNSTheme.Com</label>
+            <sort_order>205</sort_order>
+        </sns>
+    </tabs>
+    <sections>
+    	<sns_products_cfg translate="label" module="products">
+    		<label>SNS Products</label>
+            <tab>sns</tab>
+			<frontend_type>text</frontend_type>
+            <sort_order>150</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+            	<infomations translate="label">
+            		<label>SNS Products</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>0</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+            		<frontend_model>products/adminhtml_system_config_form_fieldset_infomations</frontend_model>
+	            </infomations>
+            	<general translate="label">
+            		<label>Default Configuration</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+	                	<title translate="label">
+	                		<label>Block Title</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+						</title>
+
+	            		<product_source translate="label">
+		            		<label>Product Source</label>
+		            		<frontend_type>select</frontend_type>
+		            		<source_model>products/system_config_source_productSources</source_model>
+		            		<sort_order>10</sort_order>
+		            		<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</product_source>
+						<product_category translate="label">
+		            		<label>Select Category</label>
+		            		<frontend_type>multiselect</frontend_type>
+		            		<source_model>products/system_config_source_listCategory</source_model>
+		            		<sort_order>20</sort_order>
+		            		<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends><product_source>catalog</product_source></depends>
+						</product_category>
+						<product_ids translate="label">
+							<label>IDs of Products</label>
+		            		<frontend_type>text</frontend_type>
+		            		<comment>Separator by comma (,). Eg: 1,2,3,4...</comment>
+		            		<sort_order>30</sort_order>
+		            		<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends><product_source>product</product_source></depends>
+						</product_ids>
+		            	<product_order_by translate="label">
+		            		<label>Product Order by</label>
+		            		<frontend_type>select</frontend_type>
+		            		<source_model>products/system_config_source_orderBy</source_model>
+		            		<sort_order>40</sort_order>
+		            		<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends><product_source>catalog</product_source></depends>
+						</product_order_by>
+		            	<product_order_dir translate="label">
+		            		<label>Product Order Dir</label>
+		            		<frontend_type>select</frontend_type>
+		            		<source_model>products/system_config_source_orderDirection</source_model>
+		            		<sort_order>50</sort_order>
+		            		<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends><product_source>catalog</product_source></depends>
+						</product_order_dir>
+		            	<product_filter_by translate="label">
+		            		<label>Product Filter</label>
+		            		<frontend_type>select</frontend_type>
+		            		<source_model>products/system_config_source_filterBy</source_model>
+		            		<sort_order>55</sort_order>
+		            		<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends><product_source>catalog</product_source></depends>
+						</product_filter_by>
+						<product_limitation translate="label">
+		            		<label>Product Limitation</label>
+		            		<frontend_type>text</frontend_type>
+		            		<sort_order>60</sort_order>
+		            		<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<depends><product_source>catalog</product_source></depends>
+							<validate>validate-number validate-greater-than-zero</validate>
+						</product_limitation>
+
+
+						<product_other_infomations_heading translate="label">
+                            <label>Number products per row ( apply for slider layout )</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                        </product_other_infomations_heading>
+                        <screen_phone translate="label">
+                            <label><![CDATA[Screen width > 0px]]></label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>110</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <validate>validate-number validate-greater-than-zero</validate>
+                        </screen_phone>
+                        <screen_xs translate="label">
+                            <label><![CDATA[Screen width > 480px]]></label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>120</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <validate>validate-number validate-greater-than-zero</validate>
+                        </screen_xs>
+                        <screen_sm translate="label">
+                            <label><![CDATA[Screen width > 768px]]></label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>130</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <validate>validate-number validate-greater-than-zero</validate>
+                        </screen_sm>
+                        <screen_md translate="label">
+                            <label><![CDATA[Screen width > 992px]]></label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>140</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <validate>validate-number validate-greater-than-zero</validate>
+                        </screen_md>
+                        <screen_lg translate="label">
+                            <label><![CDATA[Screen width > 1200px]]></label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>150</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <validate>validate-number validate-greater-than-zero</validate>
+                        </screen_lg>
+                    </fields>
+	            </general>
+            </groups>
+    	</sns_products_cfg>
+    </sections>
+</config>

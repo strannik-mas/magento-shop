@@ -1,0 +1,53 @@
+/*--- price-box ---*/
+.price-box{
+	p {
+		margin: 0 0; 
+		display: inline-block;
+	}
+	.old-price{
+		margin: 0; 
+		padding: 0; 
+		margin-right: 6px;
+		display: inline-block;
+		position: relative;
+		.price{
+			text-decoration: line-through; 
+			color: #999999; 
+			position: relative; 
+			line-height: normal;
+			font-size: 115%;
+		}
+	}
+	.regular-price,
+	.special-price,.minimal-price{
+		.price {
+			color: @color2; 
+			font-weight:bold;
+			font-size: 200%;
+		}
+	}
+	.price{
+		color: #666; 
+		line-height: 24px;
+		font-weight: bold;
+	}
+		
+	.minimal-price-link .price{font-size: 100%}
+	.price-label{display: none;}
+	.price-from{
+		padding: 0 10px 0 0;
+		.price-label{display: inline-block;}
+		.price{
+			font-size: 130%;
+			color:  @color2;
+		}
+	}
+	.price-to {
+		padding: 0 0;
+		.price-label{display: inline-block;}
+		.price{
+			font-size: 130%;
+			color:  @color2;
+		}
+	}
+}

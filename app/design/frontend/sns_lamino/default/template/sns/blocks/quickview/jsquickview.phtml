@@ -1,0 +1,54 @@
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+	var baseUrl = "<?php echo $this->getUrl('lamino/quickview') ?>";
+	var qvClass = '.wrap-quickview';
+	//var qvClass = '.product-image';
+
+	$(qvClass).each(function() {
+		var productId = $(this).attr('data-id');
+		if(productId) {
+			productId = productId.split("qv_item_");
+			var url = baseUrl+'index'+'?id='+productId[1];
+			$(this).find('a').attr({'href' : url}).addClass('qv_btn');
+		}
+	});
+	$(".qv_btn").fancybox({
+		type		: 'iframe',
+		iframe		: {
+				preload: true
+			},
+		maxWidth	: '80%',
+		maxHeight	: '85%',
+		fitToView	: true,
+		autoSize	: true,
+		closeClick	: false
+	});
+	jQuery(document).ajaxSuccess(function(){
+		var baseUrl = "<?php echo $this->getUrl('lamino/quickview') ?>";
+		var qvClass = '.wrap-quickview';
+		//var qvClass = '.product-image';
+
+		$(qvClass).each(function() {
+			var productId = $(this).attr('data-id');
+			if(productId) {
+				productId = productId.split("qv_item_");
+				var url = baseUrl+'index'+'?id='+productId[1];
+				$(this).find('a').attr({'href' : url}).addClass('qv_btn');
+			}
+		});
+		$(".qv_btn").fancybox({
+			type		: 'iframe',
+			iframe		: {
+					preload: true
+				},
+			maxWidth	: '80%',
+			maxHeight	: '85%',
+			fitToView	: true,
+			autoSize	: true,
+			closeClick	: false
+		});
+	});
+});
+</script>
+
+

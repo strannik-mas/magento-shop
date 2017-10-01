@@ -1,0 +1,88 @@
+<?php
+$tag_id = 'sns_serachbox_pro'.rand().time();
+$cat_list = $this->getCategories();
+$options = $this->getConfigObject();
+$uq = rand().time();
+?>
+<?php if( $options->isenabled == 1 ){?>
+	<div id="<?php echo $tag_id;?>" class="sns-serachbox-pro">
+		<?php if( $options->show_popular == 1 ){?>
+			<div class="sns-searchbox-popular">
+				<div class="sns-searchbox-popular-title">Popular Searches: </div>
+				<div class="sns-searchbox-keyword">
+					<?php if( sizeof($this->getTerms()) > 0 ): //var_dump(count($this->getTerms));?>
+						<ul class="sns-searchbox-keyword-list">
+							<?php foreach ($this->getTerms() as $_term): ?>
+								<li><a href="<?php echo $this->getSearchUrl($_term) ?>"><?php echo $this->htmlEscape($_term->getName()) ?></a></li>
+							<?php endforeach; ?>
+							<?php if( $options->show_more == 1 ){?>
+								<li>
+									<a class="sns-searchbox-more" data_sb_ajaxurl="<?php echo Mage::getBaseUrl()."quicksearch/index/ajax";?>" data_count="<?php echo $options->limit_popular;?>"><?php echo $options->more_text;?></a>
+								</li>
+							<?php }?>
+						</ul>
+					<?php else: ?>
+						<p class="note-msg"><?php echo $this->__('There are no search terms available.'); ?></p>
+					<?php endif; ?>
+				</div>
+			</div>
+		<?php }?>
+		<?php if( $options->show_advanced == 1 ){?>
+			<div class="sns-searchbox-advanced">
+				<a href="<?php echo $this->getBaseUrl()?>catalogsearch/advanced/"><?php echo $this->__('Advanced +')?></a>
+			</div>
+		<?php }?>
+		<div class="sns-searbox-content">
+			<form id="search_mini_form<?php echo $uq; ?>" action="<?php echo $this->helper('catalogsearch')->getResultUrl() ?>" method="get">
+				<div class="form-search">
+					<?php if($options->show_catfilter) : ?>
+						<?php $categorySearchHelper = $this->helper('quicksearch'); ?>
+						<select id="<?php echo $categorySearchHelper->getCategoryParamName() ?>" name="<?php echo $categorySearchHelper->getCategoryParamName() ?>">
+							<option value=""><?php echo $this->__('All Categories') ?></option>
+							<?php foreach ( $cat_list as $cat):?>
+								<option value="<?php echo $cat['value'];?>"><?php echo $cat['label']; ?></option>
+							<?php endforeach;?>
+						</select>
+					<?php endif; ?>
+					<?php $catalogSearchHelper =  $this->helper('catalogsearch'); ?>
+					<input placeholder="search" size="30" id="search<?php echo $uq; ?>" type="text" name="<?php echo $this->helper('catalogSearch')->getQueryParamName() ?>" class="input-text" value="<?php echo $catalogSearchHelper->getEscapedQueryText() ?>"  />
+					<button type="submit" title="<?php echo $this->__('Search') ?>" class="button form-button"></button>
+					<div id="search_autocomplete<?php echo $uq; ?>" class="search-autocomplete"></div>
+				</div>
+			</form>
+		</div>
+	</div>
+<?php }?>
+
+<script type="text/javascript">
+    var searchForm = new Varien.searchForm('search_mini_form<?php echo $uq; ?>', 'search<?php echo $uq; ?>', '<?php echo $this->__('Search here...') ?>');
+    searchForm.initAutocomplete('<?php echo $catalogSearchHelper->getSuggestUrl() ?>', 'search_autocomplete<?php echo $uq; ?>');
+
+	jQuery(document).ready(function($){
+		$('.sns-searchbox-more').click(function(){
+			$('a.sns-searchbox-more').attr('data_count') == 10; 
+			var sb_ajaxurl = $('a.sns-searchbox-more').attr('data_sb_ajaxurl');
+			var firt_load = <?php echo $options->limit_popular;?>;
+			var count = $('a.sns-searchbox-more').attr('data_count'); 
+			count = parseInt(count);
+			if( firt_load >= count ){
+				count = count + parseInt(firt_load);
+			}
+			$.ajax({
+				type: 'POST',
+				url: sb_ajaxurl,
+				data:{
+					is_ajax: 1,
+					count_term: count
+				},
+				success: function(data){
+					$('.sns-serachbox-pro').html(data.htm);				
+					$('a.sns-searchbox-more').attr({
+					'data_count': count + parseInt(firt_load)
+					}); 					
+				}, 
+				dataType:'json'
+			});
+		});
+	});
+</script>

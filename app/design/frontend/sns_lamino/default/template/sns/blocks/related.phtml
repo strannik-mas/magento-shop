@@ -1,0 +1,235 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2010 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+if($this->getItems()->getSize()): 
+$blockId = 'related'.rand().time();
+$themeCfg =   Mage::helper('lamino/data');
+$imgSize = $themeCfg->getImgSize('XL');
+$imgWidth = $imgSize[0];
+$imgHeight = $imgSize[1];
+$imgSizeS = $themeCfg->getImgSize('S');
+?>
+<div id="<?php echo $blockId; ?>" class="sns-slider block box-up-sell">
+	<div class="block-title">
+		<div class="title-navi">
+			<strong><?php echo $this->__('Related Product') ?></strong>
+			<div class="navslider">
+				<a class="prev" href="#"><i class="fa fa-angle-left"></i></a>
+				<a class="next" href="#"><i class="fa fa-angle-right"></i></a>
+			</div>
+		</div>		
+	</div>
+<!--  <p class="block-subtitle"><?php echo $this->__('Check items to add to the cart or') ?>&nbsp;<a href="#" onclick="selectAllRelated(this); return false;"><?php echo $this->__('select all') ?></a></p> -->
+  <!-- <p class="block-subtitle"><?php echo $this->__('Check items to add to the cart or') ?>&nbsp;<a href="#" onclick="selectAllRelated(this); return false;"><?php echo $this->__('select all') ?></a></p>-->
+    
+	<div class="clearfix container-slider">
+    	<div class="up-sell-products">
+			<div class="products-grid" id="block-related">
+	        <?php foreach($this->getItems() as $_item): ?>
+	            <div class="item">
+	                <div class="item-inner">
+						<div class="prd">
+		                	<div class="item-img clearfix">	
+								<div class="badges">
+								<?php
+									if ($now>=$newsFrom && $now<=$newsTo && $themeCfg->getField('general_useTagNew'))
+										echo "<span class='ico-product ico-new'>New</span>";
+									?>
+								</div>
+					            <a href="<?php echo $_item->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_item, 'small_image'), null, true) ?>" class="product-image<?php echo (count(Mage::getModel('catalog/product')->load($_item->getId())->getMediaGalleryImages()) > 0)?' have-additional':'';?>">
+					                <span class="image-main">
+					            	<img src="<?php echo $this->helper('catalog/image')->init($_item, 'small_image')->resize($imgSize[0], $imgSize[1]); ?>" alt="<?php echo $this->stripTags($this->getImageLabel($_item, 'small_image'), null, true) ?>" />
+					                </span>
+					            </a>							
+								<?php if ($saleLabel && $nowtime < $endTime && $themeCfg->getField('general_dealsCountdown')): ?>
+									<div class="countdown" data-endtime="<?php echo $endTime; ?>"></div>
+								<?php endif; ?>						           									     
+								 <div class="actions">
+									<ul class="add-to-links">	
+										 <li class="wrap-quickview" data-id="qv_item_<?php echo $_item->getId(); ?>" >
+											<a class="sns-btn-quickview" href="<?php echo $_item->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_item, 'small_image'), null, true) ?>"><span> <?php echo $this->__('quick view') ?></span></a>
+										</li>
+										<?php if ( $this->helper('wishlist')->isAllow() && $themeCfg->getField('listingpage_displayWishlist') ) : ?>
+											<li><a href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>" class="link-wishlist" data-placement="top" data-toggle="tooltip"> <?php //echo $this->__('Add to Wishlist') ?><span><?php echo $this->__('Add to Wishlist') ?></span></a></li>
+											
+										<?php endif; ?>
+										 <?php if( $themeCfg->getField('listingpage_displayCompare') ):
+											$_compareUrl=$this->getAddToCompareUrl($_item);
+											?>
+											<li><a  href="<?php echo $_compareUrl ?>" class="link-compare" data-toggle="tooltip" data-placement="top"><?php //echo $this->__('Add to Compare') ?><span><?php echo $this->__('Add to Compare') ?></span></a></li>
+										
+										<?php endif; ?>									   									   
+									</ul>
+                                 </div>
+								<div class="wrap-addtocart">
+									<?php if( $themeCfg->getField('listingpage_displayAddtocart') ): ?>
+										<?php if($_item->isSaleable()): ?>
+											<button title="<?php echo $this->__('Add to Cart') ?>" class="btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_item) ?>')" >
+												<i class="fa fa-shopping-cart"></i>
+												<p><?php echo $this->__('Add to Cart') ?></p>
+											</button>
+										<?php else: ?>
+											<span class="btn-cart out-of-stock" title="<?php echo $this->__('Out of stock') ?>" data-toggle="tooltip" data-placement="left" data-original-title="<?php echo $this->__('Out of stock') ?>"><span><?php echo $this->__('Out of stock') ?></span></span>
+										<?php endif; ?>
+									<?php endif; ?>
+								</div>
+		                    </div>
+							
+		                    <div class="item-info">
+		                        <div class="info-inner">
+		                            <div class="item-title">
+		                                <a href="<?php echo $_item->getProductUrl() ?>" title="<?php echo $this->stripTags($_item->getName(), null, true) ?>">
+			                                <?php
+			                                    if(strlen($this->htmlEscape($_item->getName())) > 22){
+			                                        echo substr($this->htmlEscape($_item->getName()), 0, 22) .' ...';
+			                                    }else{
+			                                        echo $this->htmlEscape($_item->getName());
+			                                    }
+			                                ?>
+		                                </a>
+		                            </div>
+		                            <div class="rating">
+		                            	<?php echo $this->getReviewsSummaryHtml($_item, false, true)?>
+		                            </div>
+		                            <div class="item-content clearfix">
+		                                <div class="item-price">
+		                                    <?php
+											 $price = $_item->getPrice();
+											$finalPrice = $_item->getFinalPrice();
+											echo $this->getPriceHtml($_item, false, rand().time()) ;
+											if (isset($price) && isset($finalPrice) && $finalPrice < $price && $themeCfg->getField('general_useTagSale'))
+											echo "<span class='ico-product ico-sale'>-".floor(100-($finalPrice/$price)*100)."%</span>";
+											?>
+		                                </div>
+		                            </div>	
+		                        </div>
+		                    </div>
+						</div>
+						<?php 
+							$product = Mage::getModel('catalog/product')->load($_item->getId());
+							if($themeCfg->getField('general_galleryImg') && count($product->getMediaGalleryImages())) : 
+						?>
+                    		<?php $uq = rand().time(); ?>
+							<!---<div id="gallery<?php echo $uq; ?>" class="gallery">
+								<a class="buttons prev" href="#"><i class="fa fa-angle-up"></i></a>
+								<div class="viewport">
+									<ul class="overview">
+										<?php
+											foreach ($product->getMediaGalleryImages() as $image) :
+										?>
+											<li class="img">
+												<img 
+													data-src="<?php echo $this->helper('catalog/image')->init($product, 'image', $image->getFile())->resize($imgWidth, $imgHeight); ?>" 
+													src="<?php echo $this->helper('catalog/image')->init($product, 'image', $image->getFile())->resize($imgSizeS[0], $imgSizeS[1]); ?>" alt="" />
+											</li>
+										<?php endforeach; ?>
+									</ul>
+								</div>
+								<a class="buttons next" href="#"><i class="fa fa-angle-down"></i></a>
+							</div>
+							---->
+						<?php endif; ?>
+	                </div>
+	            </div>			
+	        <?php endforeach ?>
+			</div>
+	    </div>
+        <script type="text/javascript">decorateList('block-related', 'none-recursive')</script>
+    </div>
+    <script type="text/javascript">
+    //<![CDATA[
+    $$('.related-checkbox').each(function(elem){
+        Event.observe(elem, 'click', addRelatedToProduct)
+    });	
+	
+    var relatedProductsCheckFlag = false;
+    function selectAllRelated(txt){
+        if (relatedProductsCheckFlag == false) {
+            $$('.related-checkbox').each(function(elem){
+                elem.checked = true;
+            });
+            relatedProductsCheckFlag = true;
+            txt.innerHTML="<?php echo $this->__('unselect all') ?>";
+        } else {
+            $$('.related-checkbox').each(function(elem){
+                elem.checked = false;
+            });
+            relatedProductsCheckFlag = false;
+            txt.innerHTML="<?php echo $this->__('select all') ?>";
+        }
+        addRelatedToProduct();
+    }
+
+    function addRelatedToProduct(){
+        var checkboxes = $$('.related-checkbox');
+        var values = [];
+        for(var i=0;i<checkboxes.length;i++){
+            if(checkboxes[i].checked) values.push(checkboxes[i].value);
+        }
+        if($('related-products-field')){
+            $('related-products-field').value = values.join(',');
+        }
+    }
+    //]]>
+    </script>
+    <script type="text/javascript">
+		//<![CDATA[
+		jQuery(document).ready(function($) {
+			//	$(window).load(function(){
+			$('#<?php echo $blockId; ?> #block-related').owlCarousel({
+				itemsCustom: [
+					[0, 1],
+					[480,2],
+					[641,3]
+				],
+				pagination: false,
+				itemsScaleUp : false,
+				slideSpeed : 500,
+				autoPlay: false,
+				addClassActive: true,
+				afterAction: function (e) {
+					if(this.options.items >= this.itemsAmount){
+						$('#<?php echo $blockId; ?> .navslider').hide();
+					}else{
+						$('#<?php echo $blockId; ?> .navslider').show();
+					}
+				}
+			});
+			$('#<?php echo $blockId; ?> .navslider .prev').on('click', function(e){
+				e.preventDefault();
+				$('#<?php echo $blockId; ?> #block-related').trigger('owl.prev');
+			});
+			$('#<?php echo $blockId; ?> .navslider .next').on('click', function(e){
+				e.preventDefault();
+				$('#<?php echo $blockId; ?> #block-related').trigger('owl.next');
+			});
+			//	});
+		});
+		//]]>
+	</script>
+</div>
+<?php endif ?>

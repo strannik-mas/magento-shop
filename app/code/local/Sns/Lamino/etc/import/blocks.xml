@@ -1,0 +1,480 @@
+
+<root>
+  <blocks>
+    <cms_block>
+      <title>Connect us and Payment methods</title>
+      <identifier>lamino_payment</identifier>
+      <content><![CDATA[<ul class="payment">
+	<li><a href="#" title="Amex" data-original-title="Amex" data-toggle="tooltip"><i class="fa fa-cc-amex">&nbsp;</i></a></li>
+	<li><a href="#" title="Discover" data-original-title="Discover" data-toggle="tooltip"><i class="fa fa-cc-discover">&nbsp;</i></a></li>
+	<li><a href="#" title="Mastercard" data-original-title="Mastercard" data-toggle="tooltip"><i class="fa fa-cc-mastercard">&nbsp;</i></a></li>
+	<li><a href="#" title="Paypal" data-original-title="Paypal" data-toggle="tooltip"><i class="fa fa-cc-paypal">&nbsp;</i></a></li>
+	<li><a href="#" title="Stripe" data-original-title="Stripe" data-toggle="tooltip"><i class="fa fa-cc-stripe">&nbsp;</i></a></li>
+	<li><a href="#" title="Visa" data-original-title="Visa" data-toggle="tooltip"><i class="fa fa-cc-visa">&nbsp;</i></a></li>
+</ul>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+    </cms_block>
+    <cms_block>
+      <title>Banner category's</title>
+      <identifier>lamino_banner_cat</identifier>
+      <content><![CDATA[<div class="block"><a class="banner" href="#"><img alt="" src="{{media url="wysiwyg/lamino/banner/banner-right.png"}}" /></a></div>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+    </cms_block>
+    <cms_block>
+      <title>Banner 1</title>
+      <identifier>lamino_banner1</identifier>
+      <content><![CDATA[<div class="row mrb50">
+<div class="col-xs-4 col-phone-12 "><a class="banner" href="#"><img src="{{media url="wysiwyg/lamino/banner1.jpg"}}" alt="" /></a></div>
+<div class="col-xs-4 col-phone-12"><a class="banner" href="#"><img src="{{media url="wysiwyg/lamino/banner2.jpg"}}" alt="" /></a></div>
+<div class="col-xs-4 col-phone-12"><a class="banner" href="#"><img src="{{media url="wysiwyg/lamino/banner3.jpg"}}" alt="" /></a></div>
+</div>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+    </cms_block>
+    <cms_block>
+      <title>Our Offers</title>
+      <identifier>lamino_footer_middle1</identifier>
+      <content><![CDATA[<h6>Our Offers</h6>
+<ul>
+<li><a href="#">Delivery</a></li>
+<li><a href="#">Service</a></li>
+<li><a href="#">Gift Cards</a></li>
+<li><a href="#">Mobile</a></li>
+<li><a href="#">Manufacturers</a></li>
+<li><a href="{{store direct_url="contacts"}}">Contacts</a></li>
+<li><a href="#">Typography</a></li>
+</ul>
+<p>----------------</p>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+    </cms_block>
+    <cms_block>
+      <title>Shipping Info</title>
+      <identifier>lamino_footer_middle2</identifier>
+      <content><![CDATA[<h6>Shipping Info</h6>
+<ul>
+<li><a href="#">New products</a></li>
+<li><a href="#">Top sellers</a></li>
+<li><a href="#">Manufactirers</a></li>
+<li><a href="#">Suppliers</a></li>
+<li><a href="#">Specials</a></li>
+<li><a href="#">Availability</a></li>
+</ul>
+<p>----------------</p>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+    </cms_block>
+    <cms_block>
+      <title>Our Account</title>
+      <identifier>lamino_footer_middle3</identifier>
+      <content><![CDATA[<h6>Our Account</h6>
+<ul>
+<li><a href="#">Recalls</a></li>
+<li><a href="{{store direct_url="customer/account"}}">My Account</a></li>
+<li><a href="{{store direct_url="sales/guest/form"}}">Orders and Returns</a></li>
+<li><a href="{{store direct_url="catalog/seo_sitemap/category"}}">Site Map</a></li>
+<li><a href="{{store direct_url="catalogsearch/term/popular"}}">Search Terms</a></li>
+<li><a href="{{store direct_url="catalogsearch/advanced"}}">Advanced Search</a></li>
+</ul>
+<p>----------------</p>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+    </cms_block>
+    <cms_block>
+      <title>Informations</title>
+      <identifier>lamino_footer_middle4</identifier>
+      <content><![CDATA[<h6>Informations</h6>
+<ul>
+	<li><a href="#">Recalls</a></li>
+	<li><a href="#">Return Policy</a></li>
+<li><a href="{{store direct_url="about-magento-demo-store"}}">About Us</a></li>
+<li><a href="{{store direct_url="contacts"}}">Contact Us</a></li>
+<li><a href="{{store direct_url="customer-service"}}">Customer Service</a></li>
+<li><a href="{{store direct_url="privacy-policy-cookie-restriction-mode"}}">Privacy Policy</a></li>
+<li><a href="{{store direct_url="blog"}}">Blogs</a></li>
+</ul>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+    </cms_block>
+    <cms_block>
+      <title>Popular Tags</title>
+      <identifier>lamino_popular</identifier>
+      <content><![CDATA[<p>{{block type="tag/popular" template="tag/popular_footer.phtml"}}</p>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+    </cms_block>
+    <cms_block>
+      <title>Custom Block</title>
+      <identifier>lamino_custom_block</identifier>
+      <content><![CDATA[<p class="text-center"><img src="{{media url="wysiwyg/lamino/logo.png"}}" alt="" /></p>
+<p style="padding: 0px 7%;"><em>Ã¢â‚¬Å“ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the when an unknown printer took a galley of type. Ã¢â‚¬Â</em></p>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+    </cms_block>
+    <cms_block>
+      <title>Banner 2</title>
+      <identifier>lamino_banner2</identifier>
+      <content><![CDATA[<div class="banner-slider">
+	<a class="banner" href="#"><img src="{{media url="wysiwyg/lamino/banner_slide1.jpg"}}" alt="" /></a>
+	<a class="banner" href="#"><img src="{{media url="wysiwyg/lamino/banner_slide2.jpg"}}" alt="" /></a>
+	<a class="banner" href="#"><img src="{{media url="wysiwyg/lamino/banner_slide3.jpg"}}" alt="" /></a>
+</div>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+    </cms_block>
+    <cms_block>
+      <title>Menu HTML1</title>
+      <identifier>lamino_menu1</identifier>
+      <content><![CDATA[<div class="row">
+<div class="col-sm-3"><a class="banner4" href="#"><img src="{{media url="wysiwyg/lamino/menu/menu4.jpg"}}" alt="" /></a><br />
+<h3 class="headtitle">Office dress</h3>
+<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an.</p>
+</div>
+<div class="col-sm-3"><a class="banner4" href="#"><img src="{{media url="wysiwyg/lamino/menu/menu5.jpg"}}" alt="" /></a><br />
+<h3 class="headtitle">Fashion dress</h3>
+<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an.</p>
+</div>
+<div class="col-sm-3"><a class="banner4" href="#"><img src="{{media url="wysiwyg/lamino/menu/menu6.jpg"}}" alt="" /></a><br />
+<h3 class="headtitle">OFFICE DRESS</h3>
+<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an.</p>
+</div>
+<div class="col-sm-3"><a class="banner4" href="#"><img src="{{media url="wysiwyg/lamino/menu/menu7.jpg"}}" alt="" /></a><br />
+<h3 class="headtitle">OFFICE DRESS</h3>
+<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an.</p>
+</div>
+</div>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+    </cms_block>
+    <cms_block>
+      <title>Menu HTML2</title>
+      <identifier>lamino_menu2</identifier>
+      <content><![CDATA[<div class="row">
+<div class="col-sm-3">
+<h3>OFFICE DRESS</h3>
+<ul class="menu">
+<li><a href="#">Vestibulum vitae arcu</a></li>
+<li><a href="#">Duis eget risus</a></li>
+<li><a href="#">Donec ac ante</a></li>
+<li><a href="#">Nam vehicula elit aliquet</a></li>
+<li><a href="#">Phasellus luctus</a></li>
+<li><a href="#">Ut lobortis</a></li>
+<li><a href="#">Vestibulum a ipsum</a></li>
+<li><a href="#">Phasellus ultrices eros</a></li>
+</ul>
+</div>
+<div class="col-sm-3">
+<h3>STREET DRESS</h3>
+<ul class="menu">
+<li><a href="#">Plus Dresses</a></li>
+<li><a href="#">Duis eget risus</a></li>
+<li><a href="#">Donec ac ante</a></li>
+<li><a href="#">Nam vehicula elit aliquet</a></li>
+<li><a href="#">Phasellus luctus</a></li>
+<li><a href="#">Office dress</a></li>
+<li><a href="#">Vestibulum a ipsum</a></li>
+<li><a href="#">Wedding dress</a></li>
+</ul>
+</div>
+<div class="col-sm-6"><a class="banner5" href="#"><img src="{{media url="wysiwyg/lamino/menu/menu10.jpg"}}" alt="" /></a></div>
+</div>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+    </cms_block>
+    <cms_block>
+      <title>Sticky Custom</title>
+      <identifier>lamino_sticky_custom</identifier>
+      <content><![CDATA[<p><img style="margin-top: 5px;" src="http://placehold.it/240x180" alt="" /></p>
+<p>Retra faucibus eu laoreet nunc. Tincidunt nulla a Nulla eu convallis scelerisque sociis nulla interdum et. Cursus senectus aliquet pretium at tristique hac ullamcorper adipiscing et Donec. Enim montes parturient.</p>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+    </cms_block>
+    <cms_block>
+      <title>Sticky Facebook Like Box</title>
+      <identifier>lamino_fb_likebox</identifier>
+      <content><![CDATA[<div>{{block type="facebook/list" name="fb.likebox"}}</div>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+    </cms_block>
+    <cms_block>
+      <title>Banner detail</title>
+      <identifier>lamino_banner_detail</identifier>
+      <content><![CDATA[<div class="banner-slider block"><a class="banner5" href="#"><img alt="" src="{{media url="wysiwyg/lamino/banner/banner-detail.png"}}" /></a> </div>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+    </cms_block>
+    <cms_block>
+      <title>About us</title>
+      <identifier>lamino_footer6</identifier>
+      <content><![CDATA[<h3>About us</h3>
+<ul class="fa-ul">
+  <li><i class="fa-li fa fa-home"></i>1645 Parkway, Suite #1250 Sevierville, 37862</li>
+  <li><i class="fa-li fa fa-phone-square"></i>+04 123 456 789 </li>
+  <li><i class="fa-li fa fa-envelope"></i>contact@snstheme.com</li>
+</ul>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+    </cms_block>
+    <cms_block>
+      <title>Custom block in sidebar</title>
+      <identifier>lamino_custom_block_sidebar</identifier>
+      <content><![CDATA[<div class="block">
+<div class="block-title"><span>Custom Block</span></div>
+<div class="block-content">
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the.</p>
+</div>
+</div>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+    </cms_block>
+    <cms_block>
+      <title>Custom block in header</title>
+      <identifier>lamino_custom_block_header</identifier>
+      <content><![CDATA[<div class="row head-policy" style="padding-top: 35px;">
+<div class="col-xs-4"><em class="fa fa-truck pull-left" style="font-size: 30px;"></em> <strong>Free shipping</strong><br /> Order over $100</div>
+<div class="col-xs-4"><em class="fa fa-gift pull-left" style="font-size: 30px;"></em> <strong>Special weekly</strong><br /> Offer</div>
+<div class="col-xs-4"><em class="fa fa-money pull-left" style="font-size: 30px;"></em> <strong>Money back</strong><br /> 30 Days</div>
+</div>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+    </cms_block>
+    <cms_block>
+      <title>Pages</title>
+      <identifier>lamino_footer_middle5</identifier>
+      <content><![CDATA[<h6>Pages</h6>
+<ul>
+	<li><a href="#">Contacts</a></li>
+	<li><a href="#">Typography</a></li>
+	<li><a href="#">One Sidebar</a></li>
+	<li><a href="#">Two Sidebars</a></li>
+	<li><a href="#">Products</a></li>
+	<li><a href="#">Single Product</a></li>
+	<li><a href="#">Service</a></li>
+</ul>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+    </cms_block>
+    <cms_block>
+      <title>Help</title>
+      <identifier>lamino_footer_middle6</identifier>
+      <content><![CDATA[<h6>Help</h6>
+<ul>
+	<li><a href="#">Customer Service</a></li>
+	<li><a href="#">ScoreCard</a></li>
+	<li><a href="#">Availability</a></li>
+	<li><a href="#">Recalls</a></li>
+	<li><a href="#">Return Policy</a></li>
+	<li><a href="#">Shipping Rates</a></li>
+	<li><a href="#">Group sale</a></li>
+</ul>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+    </cms_block>
+    <cms_block>
+      <title>Business Hours</title>
+      <identifier>lamino_hours</identifier>
+      <content><![CDATA[					<h6>Business Hours</h6>
+					<ul class="fa-ul">
+						<li>
+							<i class="fa-li fa fw fa-clock-o"></i>
+							Mon - Fri: --------------- 8am - 5pm
+						</li>
+						<li>
+							<i class="fa-li fa fw fa-clock-o"></i>
+							Sat: ---------------------- 8am - 11am
+						</li>
+						<li>
+							<i class="fa-li fa fw fa-clock-o"></i>
+							Sun: --------------------- Closed
+						</li>
+					</ul>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+    </cms_block>
+    <cms_block>
+      <title>lamino_slide_html1</title>
+      <identifier>lamino_slide_html1</identifier>
+      <content><![CDATA[<div><img alt="" src="{{media url='wysiwyg/lamino/slideshow/bg_02.png'}}" data-u="image" />
+<div class="slide-collection" data-d="-600" data-t2="NO" data-t="T|IB" data-u="caption">
+<h4 style="margin-top: 35px;">2014</h4>
+<div class="grow"><span style="left: 20px; top: 36%;">..............</span>
+<h3>Winter</h3>
+<span style="right: 20px; top: 40%;">..............</span></div>
+<h4>collection</h4>
+<p>view collection &gt;&gt;</p>
+</div>
+</div>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+    </cms_block>
+    <cms_block>
+      <title>Banner betwen</title>
+      <identifier>lamino_banner_betwen</identifier>
+      <content><![CDATA[<div class="banner-betwen row">
+<div class="col-xs-6 col-phone-12"><a class="banner" href="#"><img alt="" src="{{media url="wysiwyg/lamino/banner/banner_betwen1.png"}}" /></a></div>
+<div class="col-xs-6 col-phone-12"><a class="banner" href="#"><img alt="" src="{{media url="wysiwyg/lamino/banner/banner_betwen2.png"}}" /></a></div>
+</div>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+    </cms_block>
+    <cms_block>
+      <title>Banner top</title>
+      <identifier>lamino_banner_top</identifier>
+      <content><![CDATA[<div class="banner-top row">
+<div class="col-xs-3 col-phone-6">
+<div class="element"><a class="image" href="#"><img alt="" src="{{media url="wysiwyg/lamino/banner/banner_top1.png"}}" /></a>
+<div class="banner-top-content">
+<div class="mark-icon"><em class="fa fa-recycle">&nbsp;</em></div>
+<p class="banner-top-title">30 Days Return</p>
+<p class="banner-top-ct">money back</p>
+</div>
+</div>
+</div>
+<div class="col-xs-3 col-phone-6">
+<div class="element"><a class="image" href="#"><img alt="" src="{{media url="wysiwyg/lamino/banner/banner_top2.png"}}" /></a>
+<div class="banner-top-content">
+<div class="mark-icon"><em class="fa fa-truck">&nbsp;</em></div>
+<p class="banner-top-title">Free shipping</p>
+<p class="banner-top-ct">on all orders over $99</p>
+</div>
+</div>
+</div>
+<div class="col-xs-3 col-phone-6">
+<div class="element"><a class="image" href="#"><img alt="" src="{{media url="wysiwyg/lamino/banner/banner_top3.png"}}" /></a>
+<div class="banner-top-content">
+<div class="mark-icon"><em class="fa fa-usd">&nbsp;</em></div>
+<p class="banner-top-title">Lowest price</p>
+<p class="banner-top-ct">guarantee</p>
+</div>
+</div>
+</div>
+<div class="col-xs-3 col-phone-6">
+<div class="element"><a class="image" href="#"><img alt="" src="{{media url="wysiwyg/lamino/banner/banner_top4.png"}}" /></a>
+<div class="banner-top-content">
+<div class="mark-icon"><em class="fa fa-shield">&nbsp;</em></div>
+<p class="banner-top-title">safe shopping</p>
+<p class="banner-top-ct">guarantee</p>
+</div>
+</div>
+</div>
+</div>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+    </cms_block>
+    <cms_block>
+      <title>Footer left</title>
+      <identifier>lamino_footer_left</identifier>
+      <content><![CDATA[<div class="footr-lefft">
+<div class="logo">
+<a title="Lamino" href="http://dev.snsgroup.me/mage/sns_lamino/"><h1>Lamino</h1></a>
+				<p>Bring Real Value of Clothers</p></div>
+<ul class="payment">
+<li><a title="Paypal" href="#" data-original-title="Paypal" data-toggle="tooltip"><img alt="" src="{{media url="wysiwyg/lamino/payment/payment_1.png"}}" /></a></li>
+<li><a title="Discover" href="#" data-original-title="Discover" data-toggle="tooltip"><img alt="" src="{{media url="wysiwyg/lamino/payment/payment_2.png"}}" /></a></li>
+<li><a title="Cinus" href="#" data-original-title="Cinus" data-toggle="tooltip"><img alt="" src="{{media url="wysiwyg/lamino/payment/payment_3.png"}}" /></a></li>
+<li><a title="Visa" href="#" data-original-title="Visa" data-toggle="tooltip"><img alt="" src="{{media url="wysiwyg/lamino/payment/payment_4.png"}}" /></a></li>
+</ul>
+<p>Customer is able to payment by all method above on Lamino.com</p>
+</div>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+    </cms_block>
+    <cms_block>
+      <title>lamino banner slide</title>
+      <identifier>lamino_banner_slide</identifier>
+      <content><![CDATA[<div class="banner-slider block"><a class="banner5" href="#"><img alt="" src="{{media url="wysiwyg/lamino/banner/banner_slide.png"}}" /></a> <a class="banner5" href="#"><img alt="" src="{{media url="wysiwyg/lamino/banner/banner_slide.png"}}" /></a> <a class="banner5" href="#"><img alt="" src="{{media url="wysiwyg/lamino/banner/banner_slide.png"}}" /></a><a class="banner5" href="#"><img alt="" src="{{media url="wysiwyg/lamino/banner/banner_slide.png"}}" /></a></div>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+    </cms_block>
+    <cms_block>
+      <title>Lamino slide html2</title>
+      <identifier>lamino_slide_html2</identifier>
+      <content><![CDATA[<div><img alt="" src="{{media url='wysiwyg/lamino/slideshow/bg_03.png'}}" data-u="image" />
+<div class="slide-collection" data-d="50" data-t2="T" data-t="T|IB" data-u="caption">
+<h4 style="margin-top: 35px;">2014</h4>
+<div class="grow"><span style="left: 20px; top: 36%;">..............</span>
+<h3>Authum</h3>
+<span style="right: 20px; top: 40%;">..............</span></div>
+<h4>collection</h4>
+<p>view collection &gt;&gt;</p>
+</div>
+</div>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+    </cms_block>
+    <cms_block>
+      <title>Lamino slide html3</title>
+      <identifier>lamino_slide_html3</identifier>
+      <content><![CDATA[<div><img alt="" src="{{media url='wysiwyg/lamino/slideshow/bg_01.png'}}" data-u="image" />
+<div class="slide-collection" data-d="50" data-t2="NO" data-t="T|IB" data-u="caption">
+<h4 style="margin-top: 35px;">2014</h4>
+<div class="grow"><span style="left: 20px; top: 36%;">..............</span>
+<h3>Summer</h3>
+<span style="right: 20px; top: 40%;">..............</span></div>
+<h4>collection</h4>
+<p>view collection &gt;&gt;</p>
+</div>
+</div>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+    </cms_block>
+  </blocks>
+</root>

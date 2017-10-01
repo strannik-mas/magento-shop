@@ -1,0 +1,127 @@
+<?xml version="1.0"?>
+<config>
+    <frontend>
+        <layout>
+            <updates>
+                <proaddto module="Sns_Proaddto">
+                    <file>sns/proaddto.xml</file>
+                </proaddto>
+            </updates>
+        </layout>
+        <routers>
+            <proaddto>
+                <use>standard</use>
+                <args>
+                    <module>Sns_Proaddto</module>
+                    <frontName>proaddto</frontName>
+                </args>
+            </proaddto>
+        </routers>
+		<events>
+           <core_block_abstract_prepare_layout_before>
+               <observers>
+                   <proaddto_prepare_layout_before>
+                       <class>proaddto/observer</class>
+                       <method>prepareLayoutBefore</method>
+                   </proaddto_prepare_layout_before>
+               </observers>
+           </core_block_abstract_prepare_layout_before>
+		</events>
+    </frontend>
+    <adminhtml>
+        <menu>
+            <snstheme>
+                <title>SNS Theme</title>
+                <sort_order>88</sort_order>
+                <children>
+                    <proaddto>
+                        <title>Sns Proaddto</title>
+                        <sort_order>87</sort_order>
+                        <action>adminhtml/system_config/edit/section/sns_proaddto_cfg/</action>
+                    </proaddto>
+                </children>
+            </snstheme>
+        </menu>
+		<acl>
+			<resources>
+				<all>
+					<title>Allow Everything</title>
+				</all>
+				<admin>
+					<children>
+						<system>
+								<children>
+									<config>
+										<children>
+											<sns_proaddto_cfg translate="title" module="proaddto">
+												<title>SNS Proaddto</title>
+											</sns_proaddto_cfg>
+										</children>
+									</config>
+								</children>
+							</system>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+    </adminhtml>
+    <global>
+        <models>
+            <proaddto>
+                <class>Sns_Proaddto_Model</class>
+                <!-- <resourceModel>proaddto_mysql4</resourceModel> -->
+            </proaddto>
+            <!-- <proaddto_mysql4>
+                <class>Sns_Proaddto_Model_Mysql4</class>
+                <entities>
+                    <ajaxsuite>
+                        <table>ajaxsuite</table>
+                    </ajaxsuite>
+                </entities>
+            </proaddto_mysql4> -->
+        </models>
+        <resources>
+            <proaddto_setup>
+                <setup>
+                    <module>Sns_Proaddto</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </proaddto_setup>
+            <proaddto_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </proaddto_write>
+            <proaddto_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </proaddto_read>
+        </resources>
+        <blocks>
+            <proaddto>
+                <class>Sns_Proaddto_Block</class>
+            </proaddto>
+        </blocks>
+        <helpers>
+            <proaddto>
+                <class>Sns_Proaddto_Helper</class>
+            </proaddto>
+        </helpers>
+    </global>
+    <default>
+        <sns_proaddto_cfg module="proaddto">
+            <general>
+                <isenabled><![CDATA[1]]></isenabled>
+            </general>
+            <confirmbox>
+                <width><![CDATA[100]]></width>
+                <height><![CDATA[110]]></height>
+                <autoclose><![CDATA[1]]></autoclose>
+                <timer><![CDATA[8]]></timer>
+            </confirmbox>
+        </sns_proaddto_cfg>   
+    </default> 
+</config>

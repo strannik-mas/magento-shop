@@ -1,0 +1,317 @@
+
+<div class="nav-bar">
+<!-- menu start -->
+<ul id="nav">
+<li  class="  level0"> <a href="http://mag-vad/index.php/admin/dashboard/index/key/$dashboard/index$/"   class=""><span>Панель управления</span></a>
+</li>
+<li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="  parent level0"> <a href="#"  onclick="return false" class=""><span>Продажи</span></a>
+<ul >
+<li  class="  level1"> <a href="http://mag-vad/index.php/admin/sales_order/index/key/$sales_order/index$/"   class=""><span>Заказы</span></a>
+</li>
+<li  class="  level1"> <a href="http://mag-vad/index.php/admin/sales_invoice/index/key/$sales_invoice/index$/"   class=""><span>Счета</span></a>
+</li>
+<li  class="  level1"> <a href="http://mag-vad/index.php/admin/sales_shipment/index/key/$sales_shipment/index$/"   class=""><span>Доставки</span></a>
+</li>
+<li  class="  level1"> <a href="http://mag-vad/index.php/admin/sales_creditmemo/index/key/$sales_creditmemo/index$/"   class=""><span>Возвраты платежей</span></a>
+</li>
+<li  class="  level1"> <a href="http://mag-vad/index.php/admin/sales_transactions/index/key/$sales_transactions/index$/"   class=""><span>Транзакции</span></a>
+</li>
+<li  class="  level1"> <a href="http://mag-vad/index.php/admin/sales_recurring_profile/index/key/$sales_recurring_profile/index$/"   class=""><span>Периодические услуги (бета)</span></a>
+</li>
+<li  class="  level1"> <a href="http://mag-vad/index.php/admin/sales_billing_agreement/index/key/$sales_billing_agreement/index$/"   class=""><span>Платёжные соглашения</span></a>
+</li>
+<li  class="  level1"> <a href="http://mag-vad/index.php/admin/checkout_agreement/index/key/$checkout_agreement/index$/"   class=""><span>Условия и Соглашения</span></a>
+</li>
+<li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="  parent last level1"> <a href="#"  onclick="return false" class=""><span>Налог</span></a>
+<ul >
+<li  class="  level2"> <a href="http://mag-vad/index.php/admin/tax_rule/index/key/$tax_rule/index$/"   class=""><span>Управление налоговыми правилами</span></a>
+</li>
+<li  class="  level2"> <a href="http://mag-vad/index.php/admin/tax_rate/index/key/$tax_rate/index$/"   class=""><span>Управление налоговыми зонами и ставками</span></a>
+</li>
+<li  class="  level2"> <a href="http://mag-vad/index.php/admin/tax_rate/importExport/key/$tax_rate/importExport$/"   class=""><span>Импорт / Экспорт налоговых ставок</span></a>
+</li>
+<li  class="  level2"> <a href="http://mag-vad/index.php/admin/tax_class_customer/index/key/$tax_class_customer/index$/"   class=""><span>Налоговые классы для клиента</span></a>
+</li>
+<li  class="  last level2"> <a href="http://mag-vad/index.php/admin/tax_class_product/index/key/$tax_class_product/index$/"   class=""><span>Налоговые классы для товара</span></a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="  parent level0"> <a href="#"  onclick="return false" class=""><span>Каталог</span></a>
+<ul >
+<li  class="  level1"> <a href="http://mag-vad/index.php/admin/catalog_product/index/key/$catalog_product/index$/"   class=""><span>Управление товарами</span></a>
+</li>
+<li  class="  level1"> <a href="http://mag-vad/index.php/admin/catalog_category/index/key/$catalog_category/index$/"   class=""><span>Управление категориями</span></a>
+</li>
+<li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="  parent level1"> <a href="#"  onclick="return false" class=""><span>Атрибуты</span></a>
+<ul >
+<li  class="  level2"> <a href="http://mag-vad/index.php/admin/catalog_product_attribute/index/key/$catalog_product_attribute/index$/"   class=""><span>Управление атрибутами</span></a>
+</li>
+<li  class="  last level2"> <a href="http://mag-vad/index.php/admin/catalog_product_set/index/key/$catalog_product_set/index$/"   class=""><span>Управление наборами атрибутов</span></a>
+</li>
+</ul>
+</li>
+<li  class="  level1"> <a href="http://mag-vad/index.php/admin/urlrewrite/index/key/$urlrewrite/index$/"   class=""><span>Управление правилами URL</span></a>
+</li>
+<li  class="  level1"> <a href="http://mag-vad/index.php/admin/catalog_search/index/key/$catalog_search/index$/"   class=""><span>Поисковые запросы</span></a>
+</li>
+<li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="  parent level1"> <a href="#"  onclick="return false" class=""><span>Отзывы и параметры оценки</span></a>
+<ul >
+<li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="  parent level2"> <a href="#"  onclick="return false" class=""><span>Отзывы пользователей</span></a>
+<ul >
+<li  class="  level3"> <a href="http://mag-vad/index.php/admin/catalog_product_review/pending/key/$catalog_product_review/pending$/"   class=""><span>Отзывы, ожидающие проверки</span></a>
+</li>
+<li  class="  last level3"> <a href="http://mag-vad/index.php/admin/catalog_product_review/index/key/$catalog_product_review/index$/"   class=""><span>Все отзывы</span></a>
+</li>
+</ul>
+</li>
+<li  class="  last level2"> <a href="http://mag-vad/index.php/admin/rating/index/key/$rating/index$/"   class=""><span>Управление параметрами оценок</span></a>
+</li>
+</ul>
+</li>
+<li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="  parent level1"> <a href="#"  onclick="return false" class=""><span>Метки</span></a>
+<ul >
+<li  class="  level2"> <a href="http://mag-vad/index.php/admin/tag/index/key/$tag/index$/"   class=""><span>Все метки</span></a>
+</li>
+<li  class="  last level2"> <a href="http://mag-vad/index.php/admin/tag/pending/key/$tag/pending$/"   class=""><span>Метки, ожидающие проверки</span></a>
+</li>
+</ul>
+</li>
+<li  class="  last level1"> <a href="http://mag-vad/index.php/admin/sitemap/index/key/$sitemap/index$/"   class=""><span>Карта сайта Google</span></a>
+</li>
+</ul>
+</li>
+<li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="  parent level0"> <a href="#"  onclick="return false" class=""><span>Клиенты</span></a>
+<ul >
+<li  class="  level1"> <a href="http://mag-vad/index.php/admin/customer/index/key/$customer/index$/"   class=""><span>Управление клиентами</span></a>
+</li>
+<li  class="  level1"> <a href="http://mag-vad/index.php/admin/customer_group/index/key/$customer_group/index$/"   class=""><span>Группы клиентов</span></a>
+</li>
+<li  class="  last level1"> <a href="http://mag-vad/index.php/admin/customer_online/index/key/$customer_online/index$/"   class=""><span>Клиенты онлайн</span></a>
+</li>
+</ul>
+</li>
+<li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="  parent level0"> <a href="#"  onclick="return false" class=""><span>Маркетинг</span></a>
+<ul >
+<li  class="  level1"> <a href="http://mag-vad/index.php/admin/promo_catalog/index/key/$promo_catalog/index$/"   class=""><span>Ценовые правила для каталога</span></a>
+</li>
+<li  class="  last level1"> <a href="http://mag-vad/index.php/admin/promo_quote/index/key/$promo_quote/index$/"   class=""><span>Ценовые правила для корзины</span></a>
+</li>
+</ul>
+</li>
+<li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="  parent level0"> <a href="#"  onclick="return false" class=""><span>Рассылка</span></a>
+<ul >
+<li  class="  level1"> <a href="http://mag-vad/index.php/admin/newsletter_template/index/key/$newsletter_template/index$/"   class=""><span>Шаблоны рассылок</span></a>
+</li>
+<li  class="  level1"> <a href="http://mag-vad/index.php/admin/newsletter_queue/index/key/$newsletter_queue/index$/"   class=""><span>Очередь рассылки</span></a>
+</li>
+<li  class="  level1"> <a href="http://mag-vad/index.php/admin/newsletter_subscriber/index/key/$newsletter_subscriber/index$/"   class=""><span>Подписчики рассылки</span></a>
+</li>
+<li  class="  last level1"> <a href="http://mag-vad/index.php/admin/newsletter_problem/index/key/$newsletter_problem/index$/"   class=""><span>Отчёты проблем с письмами</span></a>
+</li>
+</ul>
+</li>
+<li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="  parent level0"> <a href="#"  onclick="return false" class=""><span>CMS</span></a>
+<ul >
+<li  class="  level1"> <a href="http://mag-vad/index.php/admin/cms_page/index/key/$cms_page/index$/"   class=""><span>Страницы</span></a>
+</li>
+<li  class="  level1"> <a href="http://mag-vad/index.php/admin/cms_block/index/key/$cms_block/index$/"   class=""><span>Статичные блоки</span></a>
+</li>
+<li  class="  level1"> <a href="http://mag-vad/index.php/admin/widget_instance/index/key/$widget_instance/index$/"   class=""><span>Виджеты</span></a>
+</li>
+<li  class="  last level1"> <a href="http://mag-vad/index.php/admin/poll/index/key/$poll/index$/"   class=""><span>Опросы</span></a>
+</li>
+</ul>
+</li>
+<li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="  parent level0"> <a href="#"  onclick="return false" class=""><span>Отчёты</span></a>
+<ul >
+<li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="  parent level1"> <a href="#"  onclick="return false" class=""><span>Продажи</span></a>
+<ul >
+<li  class="  level2"> <a href="http://mag-vad/index.php/admin/report_sales/sales/key/$report_sales/sales$/"   class=""><span>Заказы</span></a>
+</li>
+<li  class="  level2"> <a href="http://mag-vad/index.php/admin/report_sales/tax/key/$report_sales/tax$/"   class=""><span>Налог</span></a>
+</li>
+<li  class="  level2"> <a href="http://mag-vad/index.php/admin/report_sales/invoiced/key/$report_sales/invoiced$/"   class=""><span>Оплачено</span></a>
+</li>
+<li  class="  level2"> <a href="http://mag-vad/index.php/admin/report_sales/shipping/key/$report_sales/shipping$/"   class=""><span>Доставка</span></a>
+</li>
+<li  class="  level2"> <a href="http://mag-vad/index.php/admin/report_sales/refunded/key/$report_sales/refunded$/"   class=""><span>Возвраты</span></a>
+</li>
+<li  class="  level2"> <a href="http://mag-vad/index.php/admin/report_sales/coupons/key/$report_sales/coupons$/"   class=""><span>Купоны</span></a>
+</li>
+<li  class="  last level2"> <a href="http://mag-vad/index.php/admin/paypal_reports/index/key/$paypal_reports/index$/"   class=""><span>PayPal Settlement Reports</span></a>
+</li>
+</ul>
+</li>
+<li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="  parent level1"> <a href="#"  onclick="return false" class=""><span>Корзина покупок</span></a>
+<ul >
+<li  class="  level2"> <a href="http://mag-vad/index.php/admin/report_shopcart/product/key/$report_shopcart/product$/"   class=""><span>Товары в корзинах</span></a>
+</li>
+<li  class="  last level2"> <a href="http://mag-vad/index.php/admin/report_shopcart/abandoned/key/$report_shopcart/abandoned$/"   class=""><span>Заброшенные корзины</span></a>
+</li>
+</ul>
+</li>
+<li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="  parent level1"> <a href="#"  onclick="return false" class=""><span>Товары</span></a>
+<ul >
+<li  class="  level2"> <a href="http://mag-vad/index.php/admin/report_sales/bestsellers/key/$report_sales/bestsellers$/"   class=""><span>Самые продаваемые товары</span></a>
+</li>
+<li  class="  level2"> <a href="http://mag-vad/index.php/admin/report_product/sold/key/$report_product/sold$/"   class=""><span>Заказано товаров</span></a>
+</li>
+<li  class="  level2"> <a href="http://mag-vad/index.php/admin/report_product/viewed/key/$report_product/viewed$/"   class=""><span>Наиболее посещаемые</span></a>
+</li>
+<li  class="  level2"> <a href="http://mag-vad/index.php/admin/report_product/lowstock/key/$report_product/lowstock$/"   class=""><span>Малое кол-во в наличии</span></a>
+</li>
+<li  class="  last level2"> <a href="http://mag-vad/index.php/admin/report_product/downloads/key/$report_product/downloads$/"   class=""><span>Скачиваний</span></a>
+</li>
+</ul>
+</li>
+<li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="  parent level1"> <a href="#"  onclick="return false" class=""><span>Клиенты</span></a>
+<ul >
+<li  class="  level2"> <a href="http://mag-vad/index.php/admin/report_customer/accounts/key/$report_customer/accounts$/"   class=""><span>Новые учётные записи</span></a>
+</li>
+<li  class="  level2"> <a href="http://mag-vad/index.php/admin/report_customer/totals/key/$report_customer/totals$/"   class=""><span>Клиенты по сумме заказов</span></a>
+</li>
+<li  class="  last level2"> <a href="http://mag-vad/index.php/admin/report_customer/orders/key/$report_customer/orders$/"   class=""><span>Клиенты по количеству заказов</span></a>
+</li>
+</ul>
+</li>
+<li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="  parent level1"> <a href="#"  onclick="return false" class=""><span>Метки</span></a>
+<ul >
+<li  class="  level2"> <a href="http://mag-vad/index.php/admin/report_tag/customer/key/$report_tag/customer$/"   class=""><span>Клиенты</span></a>
+</li>
+<li  class="  level2"> <a href="http://mag-vad/index.php/admin/report_tag/product/key/$report_tag/product$/"   class=""><span>Товары</span></a>
+</li>
+<li  class="  last level2"> <a href="http://mag-vad/index.php/admin/report_tag/popular/key/$report_tag/popular$/"   class=""><span>Популярное</span></a>
+</li>
+</ul>
+</li>
+<li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="  parent level1"> <a href="#"  onclick="return false" class=""><span>Отзывы</span></a>
+<ul >
+<li  class="  level2"> <a href="http://mag-vad/index.php/admin/report_review/customer/key/$report_review/customer$/"   class=""><span>Отзывы пользователя</span></a>
+</li>
+<li  class="  last level2"> <a href="http://mag-vad/index.php/admin/report_review/product/key/$report_review/product$/"   class=""><span>Отзывы на товар</span></a>
+</li>
+</ul>
+</li>
+<li  class="  level1"> <a href="http://mag-vad/index.php/admin/report/search/key/$report/search$/"   class=""><span>Критерии поиска</span></a>
+</li>
+<li  class="  last level1"> <a href="http://mag-vad/index.php/admin/report_statistics/index/key/$report_statistics/index$/"   class=""><span>Обновить статистику</span></a>
+</li>
+</ul>
+</li>
+<li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="  parent level0"> <a href="#"  onclick="return false" class=""><span>SNS Theme</span></a>
+<ul >
+<li  class="  level1"> <a href="http://mag-vad/index.php/admin/system_config/edit/section/sns_lamino_cfg/key/$system_config/edit$/"   class=""><span>SNS Lamino</span></a>
+</li>
+<li  class="  level1"> <a href="http://mag-vad/index.php/admin/system_config/edit/section/sns_lamino_sticky/key/$system_config/edit$/"   class=""><span>SNS Lamino Sticky</span></a>
+</li>
+<li  class="  level1"> <a href="http://mag-vad/index.php/admin/system_config/edit/section/sns_slideshow_cfg/key/$system_config/edit$/"   class=""><span>SNS Slideshow</span></a>
+</li>
+<li  class="  level1"> <a href="http://mag-vad/index.php/admin/system_config/edit/section/twitter_cfg/key/$system_config/edit$/"   class=""><span>SNS Twitter</span></a>
+</li>
+<li  class="  level1"> <a href="http://mag-vad/index.php/admin/system_config/edit/section/sns_quicksearch_cfg/key/$system_config/edit$/"   class=""><span>SNS Quicksearch</span></a>
+</li>
+<li  class="  level1"> <a href="http://mag-vad/index.php/admin/system_config/edit/section/sns_products_cfg/key/$system_config/edit$/"   class=""><span>SNS Products</span></a>
+</li>
+<li  class="  level1"> <a href="http://mag-vad/index.php/admin/system_config/edit/section/sns_proaddto_cfg/key/$system_config/edit$/"   class=""><span>Sns Proaddto</span></a>
+</li>
+<li  class="  level1"> <a href="http://mag-vad/index.php/admin/system_config/edit/section/facebook_cfg/key/$system_config/edit$/"   class=""><span>SNS Facebook</span></a>
+</li>
+<li  class="  last level1"> <a href="http://mag-vad/index.php/admin/system_config/edit/section/sns_producttabs_cfg/key/$system_config/edit$/"   class=""><span>Sns Product Tabs</span></a>
+</li>
+</ul>
+</li>
+<li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class=" active  parent level0"> <a href="#"  onclick="return false" class="active"><span>Система</span></a>
+<ul >
+<li  class="  level1"> <a href="http://mag-vad/index.php/admin/system_account/index/key/$system_account/index$/"   class=""><span>Моя учётная запись</span></a>
+</li>
+<li  class="  level1"> <a href="http://mag-vad/index.php/admin/notification/index/key/$notification/index$/"   class=""><span>Уведомления</span></a>
+</li>
+<li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="  parent level1"> <a href="#"  onclick="return false" class=""><span>Инструменты</span></a>
+<ul >
+<li  class="  level2"> <a href="http://mag-vad/index.php/admin/system_backup/index/key/$system_backup/index$/"   class=""><span>Резервные копии</span></a>
+</li>
+<li  class="  last level2"> <a href="http://mag-vad/index.php/admin/compiler_process/index/key/$compiler_process/index$/"   class=""><span>Компиляция</span></a>
+</li>
+</ul>
+</li>
+<li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="  parent level1"> <a href="#"  onclick="return false" class=""><span>Интернет сервисы</span></a>
+<ul >
+<li  class="  level2"> <a href="http://mag-vad/index.php/admin/api_user/index/key/$api_user/index$/"   class=""><span>SOAP/XML-RPC - Пользователи</span></a>
+</li>
+<li  class="  level2"> <a href="http://mag-vad/index.php/admin/api_role/index/key/$api_role/index$/"   class=""><span>SOAP/XML-RPC - Роли</span></a>
+</li>
+<li  class="  level2"> <a href="http://mag-vad/index.php/admin/api2_role/index/key/$api2_role/index$/"   class=""><span>REST - Роли</span></a>
+</li>
+<li  class="  level2"> <a href="http://mag-vad/index.php/admin/api2_attribute/index/key/$api2_attribute/index$/"   class=""><span>REST - Атрибуты</span></a>
+</li>
+<li  class="  level2"> <a href="http://mag-vad/index.php/admin/oauth_consumer/index/key/$oauth_consumer/index$/"   class=""><span>REST - Пользователи OAuth</span></a>
+</li>
+<li  class="  level2"> <a href="http://mag-vad/index.php/admin/oauth_authorizedTokens/index/key/$oauth_authorizedTokens/index$/"   class=""><span>REST - Авторизованные токены OAuth</span></a>
+</li>
+<li  class="  last level2"> <a href="http://mag-vad/index.php/admin/oauth_admin_token/index/key/$oauth_admin_token/index$/"   class=""><span>REST - Мои приложения</span></a>
+</li>
+</ul>
+</li>
+<li  class="  level1"> <a href="http://mag-vad/index.php/admin/system_design/index/key/$system_design/index$/"   class=""><span>Дизайн</span></a>
+</li>
+<li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="  parent level1"> <a href="#"  onclick="return false" class=""><span>Импорт/Экспорт</span></a>
+<ul >
+<li  class="  level2"> <a href="http://mag-vad/index.php/admin/import/index/key/$import/index$/"   class=""><span>Импорт</span></a>
+</li>
+<li  class="  level2"> <a href="http://mag-vad/index.php/admin/export/index/key/$export/index$/"   class=""><span>Экспорт</span></a>
+</li>
+<li  class="  level2"> <a href="http://mag-vad/index.php/admin/system_convert_gui/index/key/$system_convert_gui/index$/"   class=""><span>Профили</span></a>
+</li>
+<li  class="  last level2"> <a href="http://mag-vad/index.php/admin/system_convert_profile/index/key/$system_convert_profile/index$/"   class=""><span>Расширенные профили</span></a>
+</li>
+</ul>
+</li>
+<li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="  parent level1"> <a href="http://mag-vad/index.php/admin/system_currency/index/key/$system_currency/index$/"   class=""><span>Управление валютой</span></a>
+<ul >
+<li  class="  level2"> <a href="http://mag-vad/index.php/admin/system_currency/index/key/$system_currency/index$/"   class=""><span>Курсы</span></a>
+</li>
+<li  class="  last level2"> <a href="http://mag-vad/index.php/admin/system_currencysymbol/index/key/$system_currencysymbol/index$/"   class=""><span>Символы</span></a>
+</li>
+</ul>
+</li>
+<li  class="  level1"> <a href="http://mag-vad/index.php/admin/system_email_template/index/key/$system_email_template/index$/"   class=""><span>Транзакционные письма</span></a>
+</li>
+<li  class="  level1"> <a href="http://mag-vad/index.php/admin/system_variable/index/key/$system_variable/index$/"   class=""><span>Пользовательские переменные</span></a>
+</li>
+<li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="  parent level1"> <a href="#"  onclick="return false" class=""><span>Права доступа</span></a>
+<ul >
+<li  class="  level2"> <a href="http://mag-vad/index.php/admin/permissions_user/index/key/$permissions_user/index$/"   class=""><span>Пользователи</span></a>
+</li>
+<li  class="  last level2"> <a href="http://mag-vad/index.php/admin/permissions_role/index/key/$permissions_role/index$/"   class=""><span>Роли</span></a>
+</li>
+</ul>
+</li>
+<li onmouseover="Element.addClassName(this,'over')" onmouseout="Element.removeClassName(this,'over')" class="  parent level1"> <a href="#"  onclick="return false" class=""><span>Magento Connect</span></a>
+<ul >
+<li  class="  level2"> <a href="http://mag-vad/index.php/admin/extension_local/index/key/$extension_local/index$/"   class=""><span>Управление расширениями</span></a>
+</li>
+<li  class="  last level2"> <a href="http://mag-vad/index.php/admin/extension_custom/index/key/$extension_custom/index$/"   class=""><span>Создание пакетов расширений</span></a>
+</li>
+</ul>
+</li>
+<li  class="  level1"> <a href="http://mag-vad/index.php/admin/cache/index/key/$cache/index$/"   class=""><span>Управление кэшем</span></a>
+</li>
+<li  class="  level1"> <a href="http://mag-vad/index.php/admin/process/list/key/$process/list$/"   class=""><span>Управление индексами</span></a>
+</li>
+<li  class="  level1"> <a href="http://mag-vad/index.php/admin/system_store/index/key/$system_store/index$/"   class=""><span>Управление магазинами</span></a>
+</li>
+<li  class="  level1"> <a href="http://mag-vad/index.php/admin/sales_order_status/index/key/$sales_order_status/index$/"   class=""><span>Статусы заказов</span></a>
+</li>
+<li  class="  last level1"> <a href="http://mag-vad/index.php/admin/system_config/index/key/$system_config/index$/"   class=""><span>Конфигурация</span></a>
+</li>
+</ul>
+</li>
+</ul>
+<!-- menu end -->
+
+    <a id="page-help-link" href="http://www.magentocommerce.com/gethelp/ru_RU/Mage_Adminhtml/system_config/edit/general/">Помощь по странице</a>
+    <script type="text/javascript">$('page-help-link').target = 'magento_page_help'</script>
+
+</div>

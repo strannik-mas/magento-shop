@@ -1,0 +1,36 @@
+<?php
+	$themeCfg = Mage::helper('lamino/data');
+?>
+<div class="sns-social">
+	<?php
+	if($themeCfg->getField('social_status')) :
+		
+		$items = $themeCfg->getField('social_items');
+		$array_items = unserialize($items);
+		$id = 1;
+		$collect_items = array();
+		foreach($array_items as $key=>$item){
+			$item['id'] = $id;
+			$item['link'] = Mage::helper('cms')->getBlockTemplateProcessor()->filter($item['link']);
+			$item['class'] = ($item['icon']) ? 'fa ' . $item['icon'] : '';
+			$collect_items[] = $item;
+			$id++;
+		}
+	?>
+		<ul>
+		<?php foreach($collect_items as $item) : ?>
+			<li>
+				<a 
+					data-toggle="tooltip" 
+					data-original-title="<?php echo $item['title']; ?>" 
+					href="<?php echo $item['link']; ?>" 
+					target="<?php echo $item['target']; ?>"
+					title="<?php echo $item['title']; ?>" 
+					class="<?php echo $item['class']; ?>">
+						<?php //echo $item['title']; ?>
+				</a>
+			</li>
+		<?php endforeach; ?>
+		</ul>
+	<?php endif; ?>
+</div>

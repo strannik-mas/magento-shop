@@ -1,0 +1,30 @@
+<?php 
+if( Mage::getStoreConfig('sns_proaddto_cfg/general/isenabled', Mage::app()->getStore()->getCode) == 1): ?>
+<div id="sns_proaddto_overlay">
+	<?php
+	    $store = Mage::app()->getStore();
+	    $code  = $store->getCode();
+	?>
+	<div id="proaddto_loading">
+		<div class ="background-overlay"></div>
+		<p id="sns_loading_container">
+	        <i class="fa fa-spinner fa-spin"></i>
+		</p>
+	</div>
+	<div id="proaddto_confirmbox">
+		<div class ="background-overlay"></div>
+		<div id="sns_msg_container">
+			<div id="sns_proaddto_msg">
+			</div>
+			<div class="btn-close"><i class="fa fa-times"></i></div>
+			<?php
+			if( Mage::getStoreConfig('sns_proaddto_cfg/confirmbox/autoclose', Mage::app()->getStore()->getCode) == 1): ?>
+			<div class="timer"><?php echo Mage::getStoreConfig("sns_proaddto_cfg/confirmbox/timer"); ?></div>
+			<?php endif; ?>
+	    </div>
+	</div>	
+	<script type='text/javascript'>
+		jQuery('#finish_and_checkout').click(function(){location.href = '<?php echo $this->getUrl('checkout/cart') ?>'});
+	</script>
+</div>
+<?php endif; ?>

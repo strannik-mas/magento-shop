@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Sns_Lamino>
+			<title>Sns Lamino</title>
+			<active>true</active>
+			<codePool>local</codePool>
+			<version>1.0.0</version>
+		</Sns_Lamino>
+	</modules>
+</config>

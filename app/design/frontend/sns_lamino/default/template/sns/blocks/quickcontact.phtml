@@ -1,0 +1,43 @@
+<div class="block block-quickcontact">
+	<h6><?php echo $this->__('Quick contact') ?></h6>
+	<form action="<?php echo $this->getUrl('lamino/quickcontact/post'); ?>" method="post" name="quickcontactForm" id="quickcontactForm">			
+		<div class="quickcontact"><span><?php echo $this->__('Name') ?></span><input name="name" id="qc_name" title="<?php echo Mage::helper('contacts')->__('Name') ?>" value="<?php if(Mage::helper('customer')->isLoggedIn()) echo Mage::getSingleton('customer/session', array('name'=>'frontend'))->getCustomer()->getName()?>" class="input-text required-entry form-control" type="text" />	</div>	
+		<div class="quickcontact"><span><?php echo $this->__('Email') ?></span><input name="email" id="qc_email" title="<?php echo Mage::helper('contacts')->__('Email') ?>" value="<?php if(Mage::helper('customer')->isLoggedIn()) echo Mage::getSingleton('customer/session', array('name'=>'frontend'))->getCustomer()->getEmail()?>" class="input-text required-entry validate-email form-control" type="text"  /></div>	
+		<div class="quickcontact"><span><?php echo $this->__('Telephone') ?></span><input name="telephone" id="qc_telephone" title="<?php echo Mage::helper('contacts')->__('Telephone') ?>" value="" class="input-text form-control" type="text" /></div>
+		<div class="quickcontact"><span><?php echo $this->__('Comment*') ?></span><input name="comment" id="qc_comment" title="<?php echo Mage::helper('contacts')->__('Comment') ?>" class="form-control required-entry input-text"   /></div>
+		<button type="button" data-loading-text="<?php echo $this->__('Sending...') ?>" title="<?php echo $this->__('Send') ?>" class="button" id="qc_post">
+		<?php echo $this->__('Send') ?>
+		</button>				
+	</form>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+    jQuery(document).ready(function(){
+        jQuery('#qc_post').click(function(){
+            var action = jQuery("#quickcontactForm").attr('action');           
+            var btn = jQuery(this);
+            var btntext = btn.text();
+            var loadingtext = btn.attr('data-loading-text');
+            btn.addClass('loading').text(loadingtext).attr('disabled', 'disabled'); //.attr('disabled', 'disabled')
+            var data = jQuery('#quickcontactForm').serialize();
+            //return;
+            jQuery.ajax({
+                type: "post",
+                url: action,
+                data: data,
+            }).done(function(data){
+                jQuery('.response').remove();
+                jQuery('#quickcontactForm').before('<div class="response">'+data+'</div>');
+                jQuery('.response').slideDown();
+                btn.removeClass('loading').text(btntext).removeAttr('disabled');
+            }).fail(function(jqXHR, textStatus){
+                jQuery('.response').remove();
+                jQuery('#quickcontactForm').before('<div class="response">'+textStatus+'</div>');
+                jQuery('.response').slideDown();
+                btn.removeClass('loading').text(btntext).removeAttr('disabled');
+            });
+            return false;
+        });
+    });
+//]]>
+</script>

@@ -1,0 +1,2 @@
+<?php
+class Sns_Lamino_Model_Observer {	public function less_compile($observer) {		$design_package = Mage::getSingleton('core/design_package')->getPackageName();		if($design_package == 'sns_lamino') Mage::helper('lamino/data')->compileLess();	}}

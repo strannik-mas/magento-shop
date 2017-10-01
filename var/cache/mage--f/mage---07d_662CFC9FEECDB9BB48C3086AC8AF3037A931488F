@@ -1,0 +1,245 @@
+ <div id="sns_footer_top" class="footer wrap">
+	<div class="container">		
+		<div class="row">			
+			<div class="col-md-6">
+				<div class="block-subscribe">
+    <form action="http://mag-vad/index.php/newsletter/subscriber/new/?___SID=U" method="post" id="newsletter-validate-detail">
+        <div class="input-box">
+			<div class="input_warp">
+				<input type="text" placeholder="Enter your email here" value="" name="email" id="newsletter" class="input-text required-entry validate-email" />
+			</div>
+			<div class="button_warp">
+				<button type="submit" title="Subscribe" class="button"><i class="fa fa-envelope"></i><span>Subcriber</span></button>
+			</div>
+        </div>
+    </form>
+</div>			</div>		
+			<div class="col-md-6">
+				<div class="sns-social">
+			<ul>
+					<li>
+				<a 
+					data-toggle="tooltip" 
+					data-original-title="SNS Theme" 
+					href="#" 
+					target="_self"
+					title="SNS Theme" 
+					class="fa fa-camera">
+										</a>
+			</li>
+					<li>
+				<a 
+					data-toggle="tooltip" 
+					data-original-title="SNS Theme" 
+					href="#" 
+					target="_self"
+					title="SNS Theme" 
+					class="fa fa-pinterest">
+										</a>
+			</li>
+					<li>
+				<a 
+					data-toggle="tooltip" 
+					data-original-title="SNS Theme" 
+					href="#" 
+					target="_self"
+					title="SNS Theme" 
+					class="fa fa-twitter">
+										</a>
+			</li>
+					<li>
+				<a 
+					data-toggle="tooltip" 
+					data-original-title="SNS Theme" 
+					href="#" 
+					target="_self"
+					title="SNS Theme" 
+					class="fa fa-facebook">
+										</a>
+			</li>
+				</ul>
+	</div>			</div>
+			
+		</div>		
+	</div>
+</div>
+<div id="sns_footer_middle" class="footer wrap">
+	<div class="container">
+		<div class="row">
+			<div  class="col-md-3 col-sm-4">
+			 <div class="footr-lefft">
+<div class="logo">
+<a title="Lamino" href="http://dev.snsgroup.me/mage/sns_lamino/"><h1>Lamino</h1></a>
+				<p>Bring Real Value of Clothers</p></div>
+<ul class="payment">
+<li><a title="Paypal" href="#" data-original-title="Paypal" data-toggle="tooltip"><img alt="" src="http://mag-vad/media/wysiwyg/lamino/payment/payment_1.png" /></a></li>
+<li><a title="Discover" href="#" data-original-title="Discover" data-toggle="tooltip"><img alt="" src="http://mag-vad/media/wysiwyg/lamino/payment/payment_2.png" /></a></li>
+<li><a title="Cinus" href="#" data-original-title="Cinus" data-toggle="tooltip"><img alt="" src="http://mag-vad/media/wysiwyg/lamino/payment/payment_3.png" /></a></li>
+<li><a title="Visa" href="#" data-original-title="Visa" data-toggle="tooltip"><img alt="" src="http://mag-vad/media/wysiwyg/lamino/payment/payment_4.png" /></a></li>
+</ul>
+<p>Customer is able to payment by all method above on Lamino.com</p>
+</div>			</div>			
+			<div class="col-md-3 col-sm-4">
+			<div class="column1"><h6>Our Offers</h6>
+<ul>
+<li><a href="#">Delivery</a></li>
+<li><a href="#">Service</a></li>
+<li><a href="#">Gift Cards</a></li>
+<li><a href="#">Mobile</a></li>
+<li><a href="#">Manufacturers</a></li>
+<li><a href="http://mag-vad/index.php/contacts?___SID=U">Contacts</a></li>
+<li><a href="#">Typography</a></li>
+</ul>
+<p>----------------</p></div><div class="column2"><h6>Shipping Info</h6>
+<ul>
+<li><a href="#">New products</a></li>
+<li><a href="#">Top sellers</a></li>
+<li><a href="#">Manufactirers</a></li>
+<li><a href="#">Suppliers</a></li>
+<li><a href="#">Specials</a></li>
+<li><a href="#">Availability</a></li>
+</ul>
+<p>----------------</p></div><div class="column3"><h6>Our Account</h6>
+<ul>
+<li><a href="#">Recalls</a></li>
+<li><a href="http://mag-vad/index.php/customer/account?___SID=U">My Account</a></li>
+<li><a href="http://mag-vad/index.php/sales/guest/form?___SID=U">Orders and Returns</a></li>
+<li><a href="http://mag-vad/index.php/catalog/seo_sitemap/category?___SID=U">Site Map</a></li>
+<li><a href="http://mag-vad/index.php/catalogsearch/term/popular?___SID=U">Search Terms</a></li>
+<li><a href="http://mag-vad/index.php/catalogsearch/advanced?___SID=U">Advanced Search</a></li>
+</ul>
+<p>----------------</p></div>			</div>
+			<div class="col-md-3 col-sm-4">
+			<div class="column1"><h6>Our Offers</h6>
+<ul>
+<li><a href="#">Delivery</a></li>
+<li><a href="#">Service</a></li>
+<li><a href="#">Gift Cards</a></li>
+<li><a href="#">Mobile</a></li>
+<li><a href="#">Manufacturers</a></li>
+<li><a href="http://mag-vad/index.php/contacts?___SID=U">Contacts</a></li>
+<li><a href="#">Typography</a></li>
+</ul>
+<p>----------------</p></div><div class="column2"><h6>Shipping Info</h6>
+<ul>
+<li><a href="#">New products</a></li>
+<li><a href="#">Top sellers</a></li>
+<li><a href="#">Manufactirers</a></li>
+<li><a href="#">Suppliers</a></li>
+<li><a href="#">Specials</a></li>
+<li><a href="#">Availability</a></li>
+</ul>
+<p>----------------</p></div><div class="column3"><h6>Our Account</h6>
+<ul>
+<li><a href="#">Recalls</a></li>
+<li><a href="http://mag-vad/index.php/customer/account?___SID=U">My Account</a></li>
+<li><a href="http://mag-vad/index.php/sales/guest/form?___SID=U">Orders and Returns</a></li>
+<li><a href="http://mag-vad/index.php/catalog/seo_sitemap/category?___SID=U">Site Map</a></li>
+<li><a href="http://mag-vad/index.php/catalogsearch/term/popular?___SID=U">Search Terms</a></li>
+<li><a href="http://mag-vad/index.php/catalogsearch/advanced?___SID=U">Advanced Search</a></li>
+</ul>
+<p>----------------</p></div>			</div>
+			<div class="col-md-3 col-sm-12">
+				<div class="block block-quickcontact">
+	<h6>Quick contact</h6>
+	<form action="http://mag-vad/index.php/lamino/quickcontact/post/?___SID=U" method="post" name="quickcontactForm" id="quickcontactForm">			
+		<div class="quickcontact"><span>Name</span><input name="name" id="qc_name" title="Name" value="" class="input-text required-entry form-control" type="text" />	</div>	
+		<div class="quickcontact"><span>Email</span><input name="email" id="qc_email" title="Email" value="" class="input-text required-entry validate-email form-control" type="text"  /></div>	
+		<div class="quickcontact"><span>Telephone</span><input name="telephone" id="qc_telephone" title="Telephone" value="" class="input-text form-control" type="text" /></div>
+		<div class="quickcontact"><span>Comment*</span><input name="comment" id="qc_comment" title="Comment" class="form-control required-entry input-text"   /></div>
+		<button type="button" data-loading-text="Sending..." title="Send" class="button" id="qc_post">
+		Send		</button>				
+	</form>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+    jQuery(document).ready(function(){
+        jQuery('#qc_post').click(function(){
+            var action = jQuery("#quickcontactForm").attr('action');           
+            var btn = jQuery(this);
+            var btntext = btn.text();
+            var loadingtext = btn.attr('data-loading-text');
+            btn.addClass('loading').text(loadingtext).attr('disabled', 'disabled'); //.attr('disabled', 'disabled')
+            var data = jQuery('#quickcontactForm').serialize();
+            //return;
+            jQuery.ajax({
+                type: "post",
+                url: action,
+                data: data,
+            }).done(function(data){
+                jQuery('.response').remove();
+                jQuery('#quickcontactForm').before('<div class="response">'+data+'</div>');
+                jQuery('.response').slideDown();
+                btn.removeClass('loading').text(btntext).removeAttr('disabled');
+            }).fail(function(jqXHR, textStatus){
+                jQuery('.response').remove();
+                jQuery('#quickcontactForm').before('<div class="response">'+textStatus+'</div>');
+                jQuery('.response').slideDown();
+                btn.removeClass('loading').text(btntext).removeAttr('disabled');
+            });
+            return false;
+        });
+    });
+//]]>
+</script>
+				
+			</div> 
+		</div>
+	</div>
+</div> 
+<div id="sns_footer_bottom" class="footer wrap">
+	<div class="container">
+		<div class="sns-copyright">
+			&copy; 2014 Magento Demo Store. All Rights Reserved. <br />
+			Designed by <a href="http://www.snstheme.com/" data-toggle="tooltip" data-original-title="Visit SNSTheme.Com!" title="Visit SNSTheme.Com!">SNSTheme.Com</a>.
+		</div>						
+	</div>	
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    jQuery(function($){
+    	jQuery(document).ajaxComplete(function(){
+    		//console.log('ajaxComplete');
+	   	});
+	   	jQuery(document).ajaxSuccess(function(){
+    		//console.log('ajaxSuccess');
+	   	});
+    	jQuery(document).on('ready ajaxComplete', function(){
+    		// snsTooltip
+    		    		$("body#bd *[data-toggle='tooltip']").each(function(){
+    			if( $(this).parent().parent().hasClass('deals-action') ){
+    				$(this).tooltip({
+		        		container: 'body',
+		        		placement: 'right'
+		        	});
+    			}else{
+    				$(this).tooltip({
+		        		container: 'body'
+		        	});
+    			}
+    		})
+        	
+        	
+        	        	// end snsTooltip
+        	
+        	// deals countdown
+			jQuery('.countdown').each(function(){
+				var enddate = jQuery(this).attr('data-endtime');
+				if(enddate) {
+					var enddateArr = enddate.split(',');
+					jQuery(this).countdown({
+				        until: new Date(enddateArr[0], enddateArr[1] - 1, enddateArr[2], enddateArr[3], enddateArr[4], enddateArr[5]),
+						labels: ["Years", "Months", "Weeks", "Days", "Hrs", "Mins", "Secs"],
+						labels1: ["Year", "Month", "Week", "Day", "Hr", "Min", "Sec"]				    });
+				}
+			});
+			// end deals countdown
+    	});
+        
+
+        		
+    });
+//]]>
+
+</script>

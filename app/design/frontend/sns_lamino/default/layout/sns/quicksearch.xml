@@ -1,0 +1,12 @@
+<?xml version="1.0"?>   
+<layout version="1.0">
+	<default>
+        <reference name="head">
+        	<action method="addCss"><stylesheet>sns/quicksearch/css/style.css</stylesheet></action>
+        </reference>
+		<reference name="header">
+			<block type="quicksearch/list" name="quicksearch.list.default" as="topSearch" />
+        </reference>
+    </default>
+</layout>
+

@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<config>
+	<global>
+		<models>
+            <producttabs>
+                <class>Sns_Producttabs_Model</class>
+            </producttabs>
+        </models>
+		<blocks>
+            <producttabs>
+                <class>Sns_Producttabs_Block</class>
+            </producttabs>
+        </blocks>
+		<helpers>
+            <producttabs>
+                <class>Sns_Producttabs_Helper</class>
+            </producttabs>
+        </helpers>
+        <resources>
+        	<sns_producttabs_setup>
+        		<setup>
+        			<module>Sns_Producttabs</module>
+        		</setup>
+        	</sns_producttabs_setup>
+        </resources>
+	</global>
+	<frontend>
+        <routers>
+			<producttabs>
+                <use>standard</use>
+                <args>
+                    <module>Sns_Producttabs</module>
+                    <frontName>producttabs</frontName>
+                </args>
+            </producttabs>
+        </routers>
+		<layout>
+            <updates>
+                <producttabs module="Sns_Producttabs">
+					<file>sns/producttabs.xml</file>
+                </producttabs>
+            </updates>
+        </layout>
+        <translate>
+      		<modules>
+          		<Sns_Producttabs>
+                     <files>
+                          <default>Sns_Producttabs.csv</default>
+                     </files>
+                </Sns_Producttabs>
+            </modules>
+        </translate>
+	</frontend>
+	<adminhtml>
+        <translate>
+      		<modules>
+          		<Sns_Producttabs>
+                     <files>
+                          <default>Sns_Producttabs.csv</default>
+                     </files>
+                </Sns_Producttabs>
+            </modules>
+        </translate>
+		<menu>
+			<snstheme>
+				<title>SNS Theme</title>
+				<sort_order>87</sort_order>
+				<children>
+					<producttabs>
+						<title>Sns Product Tabs</title>
+						<sort_order>87</sort_order>
+						<action>adminhtml/system_config/edit/section/sns_producttabs_cfg/</action>
+					</producttabs>
+				</children>
+			</snstheme>
+		</menu>
+		<acl>
+			<resources>
+				<admin>
+					<children>
+						<system>
+							<children>
+								<config>
+									<children>
+										<sns_producttabs_cfg translate="title" module="producttabs">
+											<title>Sns Product Tabs</title>
+										</sns_producttabs_cfg>
+									</children>
+								</config>
+							</children>
+						</system>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+	</adminhtml>
+	<default>
+        <sns_producttabs_cfg>
+
+<general>
+	<effects><![CDATA[bounceInRight]]></effects>
+	<isenabled><![CDATA[1]]></isenabled>
+	<list_products_by><![CDATA[order]]></list_products_by>
+	<number_per_display><![CDATA[8]]></number_per_display>
+	<number_per_loadmore><![CDATA[4]]></number_per_loadmore>
+	<order_type><![CDATA[created_at,price,is_featured]]></order_type>
+	<product_category><![CDATA[3,4]]></product_category>
+	<product_order_by><![CDATA[position]]></product_order_by>
+	<product_order_dir><![CDATA[asc]]></product_order_dir>
+	<screen_lg><![CDATA[4]]></screen_lg>
+	<screen_md><![CDATA[4]]></screen_md>
+	<screen_sm><![CDATA[3]]></screen_sm>
+	<screen_xs><![CDATA[2]]></screen_xs>
+	<show_number_loadmore><![CDATA[0]]></show_number_loadmore>
+	<title><![CDATA[Featured Products]]></title>
+</general>
+
+
+</sns_producttabs_cfg>
+    </default>
+</config>

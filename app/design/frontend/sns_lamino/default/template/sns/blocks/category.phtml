@@ -1,0 +1,121 @@
+<?php
+	$themeCfg = Mage::helper('lamino/data');
+	$enabled = $themeCfg->getField('slidercategory_enabled');
+	$partnersStyle = '';
+	$bgColor = $themeCfg->getField('slidercategory_bg_color');
+	$bgImg = Mage::helper('cms')->getBlockTemplateProcessor()->filter($themeCfg->getField('slidercategory_bg_img'));
+	if (preg_match('/^wysiwyg/i', $bgImg)) {
+		$bgImg = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).$bgImg;
+		$partnersStyle .= 'background-image: url(\''.$bgImg.'\');';
+	}
+
+	$partnersStyle .= ($bgColor) ? 'background-color: '.$bgColor.';' : '';
+	if($enabled == 1) :
+		$category = $themeCfg->getField('slidercategory_category');
+		$array_category = unserialize($category);
+		$id = 1;
+		$collect_category = array();
+		foreach($array_category as $key=>$category){
+			$category['id'] = $id;
+			$category['image'] = Mage::helper('cms')->getBlockTemplateProcessor()->filter($category['image']);
+			if (preg_match('/^wysiwyg/i', $category['image'])) {
+				$category['image'] = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).$category['image'];
+			}
+			$category['link'] = Mage::helper('cms')->getBlockTemplateProcessor()->filter($category['link']);
+			$haveHttp =  strpos(trim($category['link']), "http://"); 
+			if(!$haveHttp && ($haveHttp!==0)){
+				//$category['link'] = "http://" . trim($partner['link']);  
+			}else {
+				//$category['link'] = trim($partner['link']);
+			}
+			$collect_category[] = $category;
+			$id++;
+		}
+if($collect_category) :
+	$blockId ='sns_slidercategory_'.rand().time();
+?>
+<div class="sns-slidercategory" id="<?php echo $blockId; ?>" style="<?php echo $partnersStyle; ?> ">
+ <div class="wap-slidercategory">
+	<div class="container">
+	<div class="block block_head_center">
+		<div class="block-title">
+			<div class="title-navi">
+				<strong><?php echo $themeCfg->getField('slidercategory_title'); ?></strong>
+				<div class="navslider">
+					<a class="prev" href="#"><i class="fa fa-angle-left"></i></a>
+					<a class="next" href="#"><i class="fa fa-angle-right"></i></a>
+				</div>
+			</div>
+		</div>
+	
+	<div class="category-slider ">
+		<div class="inner" style="display: none;">
+			<?php foreach($collect_category as $category) : ?>
+				<div class="item">				
+					<a target="<?php echo $category['target']; ?>" class="image" href="<?php echo $category['link']; ?>">			
+						<img alt="" src="<?php echo $category['image']; ?>" />
+					</a>
+					<div class="category-content">					
+					<div class="mark">
+						<h4><?php echo $category['item']; ?><?php echo $this->__(' item') ?></h4>
+						<a class="title" target="<?php echo $category['target']; ?>" href="<?php echo $category['link']; ?>">
+							<?php echo $category['title']; ?>
+						</a>						
+						<p><?php echo $this->__('collection') ?></p>
+					</div>
+					</div>
+					<div class="category-content">	
+					<div class="mark-under">
+						<h4><?php echo $category['item']; ?><?php echo $this->__(' item') ?></h4>
+						<a class="title" target="<?php echo $category['target']; ?>" href="<?php echo $category['link']; ?>">
+							<?php echo $category['title']; ?>
+						</a>						
+						<p><?php echo $this->__('collection') ?></p>
+					</div>	
+				</div>
+						
+				</div>
+			<?php endforeach; ?>
+		</div>
+	</div>
+</div>
+	<script>
+		jQuery(document).ready(function($) {
+			$(window).load(function(){
+				$('#<?php echo $blockId; ?> .category-slider .inner').owlCarousel({
+					items: 4,
+					itemsCustom: [
+						[0, 1],
+						[480, 2],
+						[768, 3],
+						[992, 3],
+						[1200, 4]
+					],
+					pagination: false,					
+					slideSpeed : 800,
+					addClassActive: true,
+					scrollPerPage: true,
+					afterAction: function (e) {
+						if(this.$owlItems.length > this.options.items){
+							$('.sns-slidercategory<?php echo $uniqued; ?> .navslider').show();
+						}else{
+							$('.sns-slidercategory<?php echo $uniqued; ?> .navslider').hide();
+						}
+					}							
+				});
+			});		      
+			$('.sns-slidercategory<?php echo $uniqued; ?> .navslider .prev').on('click', function(e){
+				e.preventDefault();
+				$('.sns-slidercategory<?php echo $uniqued; ?> div.inner').trigger('owl.prev');
+			});
+			$('.sns-slidercategory<?php echo $uniqued; ?> .navslider .next').on('click', function(e){
+				e.preventDefault();
+				$('.sns-slidercategory<?php echo $uniqued; ?> div.inner').trigger('owl.next');
+			});
+		});
+	</script>
+	</div>
+	</div>
+</div>
+<?php endif; ?>
+<?php endif; ?>

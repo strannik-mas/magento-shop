@@ -1,0 +1,178 @@
+<?php
+/*------------------------------------------------------------------------
+ # SNS Products - Version 1.0
+ * Copyright (C) 2013 The SNS Theme. All Rights Reserved.
+ * @license - GNU/GPL, http://www.gnu.org/licenses/gpl.html
+ * Author: SNS Theme
+ * Websites: http://www.snstheme.com
+-------------------------------------------------------------------------*/
+$themeCfg =   Mage::helper('lamino/data');
+$_productCollection = $this->getLoadedProductCollection();
+$_helper = $this->helper('catalog/output');
+$imgWidth = $this->product_image_width;
+$imgHeight = $this->product_image_height;
+if ($imgWidth <= 0 || $imgHeight <= 0){
+	$this->product_image_disp = false;
+}
+$uniqued = rand().time();
+
+$imgSizeS = $themeCfg->getImgSize('S');
+$imgSize = $themeCfg->getImgSize('LL');
+$imgWidth = $imgSize[0];
+$imgHeight = $imgSize[1];
+
+?>
+<?php if(!$_productCollection->count()): ?>
+	<p class="note-msg"><?php echo $this->__('There are no products matching the selection.') ?></p>
+<?php else: ?>
+<div id="sns_lider<?php echo $uniqued; ?>" class="block sns-slider">
+	<div class="slider-inner">
+    	<div class="block-title">			
+			<?php if($this->title!="") : ?>
+				<strong><?php echo $this->__($this->title);?></strong>
+			<?php endif; ?>
+			<?php if($this->pretext!="") : ?>
+				<p class="pretext"><?php echo $this->__($this->pretext);?></p>
+			<?php endif; ?>
+			<div class="navslider">
+				<a class="prev" href="#"><i class="fa fa-angle-left"></i></a>
+				<a class="next" href="#"><i class="fa fa-angle-right"></i></a>
+			</div>			
+    	</div>
+		<div class="container-slider">
+			<div class="products-grid">
+			    <?php foreach($_productCollection as $_product) : ?>
+			    	<?php
+				        $saleLabel = false;
+				        $newLabel = false;
+						$now = date("Y-m-d");
+				        $newsFrom= substr($_product->getData('news_from_date'),0,10);
+				        $newsTo=  substr($_product->getData('news_to_date'),0,10);
+				        $price = $_product->getPrice();
+				        $finalPrice = $_product->getFinalPrice();
+				        if(!$newsTo && $newsFrom && $now>=$newsFrom) $newLabel = true;
+				        if($newsTo && !$newsFrom && $now<=$newsTo) $newLabel = true;
+						if ($now>=$newsFrom && $now<=$newsTo && $themeCfg->getField('general_useTagNew')){ 
+							$newLabel = true;
+						}
+						if(isset($price) && isset($finalPrice) && $finalPrice < $price && $themeCfg->getField('general_useTagSale')) $saleLabel = true;
+						$endTime = Mage::getModel('core/date')->date("Y, m, d, H, i, s", $_product->getSpecialToDate());
+						$nowTime = Mage::getModel('core/date')->date("Y, m, d, H, i, s", Mage::getModel('core/date')->timestamp(time()));
+					?>
+			        <div class="item">
+						<div class="item-inner">
+							<div class="prd">
+							<div class="item-img clearfix">
+								<?php if ($newLabel) echo "<span class='ico-product ico-new'>".$this->__('New')."</span>"; ?>
+								<a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image<?php echo (count(Mage::getModel('catalog/product')->load($_product->getId())->getMediaGalleryImages()) > 0)?' have-additional':'';?>">
+									<span class="img-main">
+									<img 
+										data-zoom-image="<?php echo $this->helper('catalog/image')->init($_product, 'small_image'); ?>" 
+										src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize($imgSize[0], $imgSize[1]); ?>" 
+										alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" />
+									</span>
+								</a>
+
+							    <div class="actions">
+							        <ul class="add-to-links">
+										 <li data-id="qv_item_<?php echo $_product->getId(); ?>" class="wrap-quickview">
+											
+											<a class="sns-btn-quickview"  data-toggle="tooltip" href="<?php echo $_product->getProductUrl() ?>"><span> <?php echo $this->__('Quick view') ?></span>						
+											</a>								
+										</li>
+							            <?php if ( $this->helper('wishlist')->isAllow() && $themeCfg->getField('listingpage_displayWishlist') ) : ?>
+							                <li><a href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>" class="link-wishlist"  data-toggle="tooltip"> <?php //echo $this->__('Add to Wishlist') ?><span><?php echo $this->__('Add to Wishlist') ?></span></a></li>
+							            <?php endif; ?>
+							            <?php if( $themeCfg->getField('listingpage_displayCompare') ):
+							            $_compareUrl=$this->getAddToCompareUrl($_product);
+							            ?>
+							                <li><a  href="<?php echo $_compareUrl ?>" class="link-compare" data-toggle="tooltip"> <?php //echo $this->__('Add to Compare') ?><span><?php echo $this->__('Add to Compare') ?></span></a></li>
+							            <?php endif; ?>			
+							        </ul>									
+							    </div>
+								<div class="wrap-addtocart">
+									<?php if( $themeCfg->getField('listingpage_displayAddtocart') ): ?>
+										<?php if($_product->isSaleable()): ?>
+											<button title="<?php echo $this->__('Add to Cart') ?>" class="btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')" >
+												<i class="fa fa-shopping-cart"></i>
+												
+											</button>
+											<p><?php echo $this->__('Add to Cart') ?></p>
+										<?php else: ?>
+											<span class="btn-cart out-of-stock" title="<?php echo $this->__('Out of stock') ?>" data-toggle="tooltip" data-placement="left" data-original-title="<?php echo $this->__('Out of stock') ?>"><span><?php echo $this->__('Out of stock') ?></span></span>
+										<?php endif; ?>
+									<?php endif; ?>
+								</div>
+								<?php if ($saleLabel && $nowtime < $endTime && $themeCfg->getField('general_dealsCountdown')): ?>
+									<div class="countdown" data-endtime="<?php echo $endTime; ?>"></div>
+								<?php endif; ?>
+								</div>
+								<div class="item-info">
+								    <div class="info-inner">
+								        <div class="item-title">
+								            <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>">
+								                <?php
+								                    echo Mage::helper('core/string')->truncate($_helper->productAttribute($_product, $_product->getName(), 'name'), 22);
+								                ?>
+								            </a>
+								        </div>
+								        <div class="item-price-rating">
+											<div class="rating">
+												<?php echo $this->getReviewsSummaryHtml($_product, false, true)?>
+											</div>
+										  
+											<div class="item-price">
+												<?php echo $this->getPriceHtml($_product, false, rand().time()) ?>
+												<?php if ($saleLabel) echo "<span class='ico-product ico-sale'>-".floor(100-($finalPrice/$price)*100)."%</span>"; ?>
+											</div>
+										</div>
+								    </div>
+								</div>
+								
+							</div>
+						</div>
+			        </div>
+			    <?php endforeach; ?>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    jQuery(document).ready(function($) {
+        $('#sns_lider<?php echo $uniqued; ?> div.products-grid').owlCarousel({
+        	items: 1,
+            itemsCustom: [ 
+            	[0, 1], 
+            	[480, 1], 
+            	[768,2 ], 
+            	[992, 3], 
+            	[1200, 3] 
+            ],
+            pagination: false,
+            slideSpeed : 800,
+            addClassActive: true,
+            scrollPerPage: true,
+			afterAction: function (e) {
+			    if(this.$owlItems.length > this.options.items){
+			        $('#sns_lider<?php echo $uniqued; ?> .navslider').show();
+			    }else{
+			        $('#sns_lider<?php echo $uniqued; ?> .navslider').hide();
+			    }
+			}
+            //scrollPerPage: true,
+        });
+		$('#sns_lider<?php echo $uniqued; ?> .navslider .prev').on('click', function(e){
+			e.preventDefault();
+			$('#sns_lider<?php echo $uniqued; ?> div.owl-wrapper').trigger('owl.prev');
+		});
+		$('#sns_lider<?php echo $uniqued; ?> .navslider .next').on('click', function(e){
+			e.preventDefault();
+			$('#sns_lider<?php echo $uniqued; ?> div.owl-wrapper').trigger('owl.next');
+		});
+    });
+//]]>
+</script>
+
+<?php endif; ?>
